@@ -1,0 +1,1171 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Синтетические противомикробные средства</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #0056b3;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .question-block {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .question-text {
+            font-weight: bold;
+            margin-bottom: 10px;
+            line-height: 1.5;
+            position: relative; /* For positioning the icon */
+            padding-right: 30px; /* Add space for the icon */
+        }
+        .question-status-icon {
+            position: absolute;
+            top: 8px; /* Adjust vertical position */
+            right: 8px; /* Adjust horizontal position */
+            font-size: 1.2em;
+            display: none; /* Hidden by default */
+        }
+        .question-status-icon.correct {
+            color: #28a745; /* Green */
+        }
+        .question-status-icon.incorrect {
+            color: #dc3545; /* Red */
+        }
+        .options-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+        .options-list li {
+            margin-bottom: 8px;
+        }
+        .options-list label {
+            display: block;
+            padding: 8px;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        .options-list label:hover {
+            background-color: #e9e9e9;
+        }
+        input[type="radio"], input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        label.correct-answer { /* Corrected selector */
+            background-color: #e6ffe6;
+            border-color: #a3e6a3;
+        }
+        label.incorrect-answer { /* Corrected selector */
+            background-color: #ffe6e6;
+            border-color: #e6a3a3;
+        }
+        label.missed-correct-answer { /* New selector for not selected correct answers */
+            border: 2px solid #28a745; /* Green border */
+        }
+        .explanation-block {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #eaf2f8;
+            border: 1px solid #cce7ff;
+            border-radius: 5px;
+            display: none; /* Hidden by default */
+        }
+        .explanation-toggle {
+            cursor: pointer;
+            color: #0056b3;
+            text-decoration: underline;
+            margin-top: 10px;
+            display: block;
+        }
+        .results-block {
+            margin-top: 30px;
+            padding: 20px;
+            border: 2px solid #0056b3;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: bold;
+            display: none;
+        }
+        .buttons-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .buttons-container button {
+            padding: 10px 20px;
+            font-size: 1em;
+            margin: 0 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        .buttons-container button.check-button {
+            background-color: #28a745;
+            color: white;
+        }
+        .buttons-container button.check-button:hover {
+            background-color: #218838;
+        }
+        .buttons-container button.reset-button {
+            background-color: #dc3545;
+            color: white;
+        }
+        .buttons-container button.reset-button:hover {
+            background-color: #c82333;
+        }
+        .fill-in-blank-input {
+            border: 1px solid #ccc;
+            padding: 5px;
+            border-radius: 3px;
+            width: 150px; /* Adjust as needed */
+        }
+        .fill-in-blank-input.correct {
+            background-color: #e6ffe6;
+            border-color: #a3e6a3;
+        }
+        .fill-in-blank-input.incorrect {
+            background-color: #ffe6e6;
+            border-color: #e6a3a3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Синтетические противомикробные средства</h1>
+        <form id="quizForm">
+            <!-- Questions will be rendered here by JavaScript -->
+        </form>
+        <div class="buttons-container">
+            <button type="button" class="check-button" onclick="checkAnswers()">Проверить</button>
+            <button type="button" class="reset-button" onclick="resetQuiz()">Сбросить</button>
+        </div>
+        <div id="results" class="results-block">
+            Ваш результат: <span id="score">0</span> из <span id="totalQuestions">0</span> (<span id="percentage">0</span>%)
+        </div>
+    </div>
+
+    <script>
+        const quizData = {
+  "title": "Синтетические противомикробные средства",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Все сказанное о ципрофлоксацине верно, за исключением:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "является бактерицидом",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "обладает широким спектром действия",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "противопоказан в детском возрасте",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "выделяется почками в активном виде",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "вызывает кристаллурию и поражение почек",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 2,
+      "question": "Препарат, имеющий широкий противомикробный спектр действия, включающий микобактерию туберкулеза:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "ко-тримоксазол",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "левофлоксацин",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "линезолид",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "метронидазол",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "изониазид",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 3,
+      "question": "Все положения, касающиеся метронидазола, правильные, за исключением:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "обладает бактерицидным эффектом",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "эффективен при протозоонозных инфекциях",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "обладает широким спектром действия",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "вызывает тетурамоподобный эффект",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "в спектре действия отсутствуют аэробы",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 4,
+      "question": "При комбинированном применении прокаина и месульфамида при обработке ран наблюдается:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "уменьшение обезболивающего эффекта новокаина",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "исчезновение противомикробного действия сульфаниламида",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "усиление всасывания новокаина с развитием его токсических эффектов",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "усиление токсичности сульфаниламида",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "пролонгирование эффекта сульфаниламида",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 5,
+      "question": "Сульфацетамид применяется преимущественно:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "резорбтивно для лечения менингита",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "местно для лечения гнойных поражений глаз",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "энтерально для лечения колитов и энтеритов",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 6,
+      "question": "Сульфадиметоксин относится к сульфаниламидам следующей длительности действия:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "короткого действия (t½ менее 8 часов)",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "средней длительности (t½ до 24 часов)",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "длительного действия (t½ до 48 часов)",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "сверхдлительного действия (t½ более 60 часов)",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 7,
+      "question": "Сульфален относится к сульфаниламидам следующей длительности действия:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "короткого действия (t½ менее 8 часов)",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "средней длительности (t½ до 24 часов)",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "длительного действия (t½ до 48 часов)",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "сверхдлительного действия (t½ более 60 часов)",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 8,
+      "question": "Ко-тримоксазол содержит сульфаметоксазол и триметоприм в соотношении:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "1:1",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "5:1",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "1:5",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "2:1",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "1:2",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 9,
+      "question": "Препарат выбора для лечения неспецифического язвенного колита:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "сульфален",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "сульфацетамид",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "ко-тримоксазол",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "сульфасалазин",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "нифуроксазид",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 10,
+      "question": "Механизм терапевтического эффекта сульфасалазина при неспецифическом язвенном колите связан:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "с системным противомикробным действием препарата",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "с расщеплением препарата микрофлорой кишечника с образованием 5-аминосалициловой кислоты, обладающей противовоспалительным действием",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "с угнетением перистальтики кишечника",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 11,
+      "question": "Фторхинолоны противопоказаны детям, так как они:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "вызывают дисбактериоз",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "угнетают кроветворение",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "нарушают развитие хрящевой ткани и вызывают артропатии",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "вызывают судороги",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 12,
+      "question": "Для профилактики кристаллурии при применении сульфаниламидов необходимо:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "запивать сульфаниламиды кислым соком",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "ограничить прием жидкости",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "принимать обильное щелочное питье",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 13,
+      "question": "Препараты группы нитрофуранов применяются преимущественно при следующих инфекциях:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "кишечных инфекциях",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "инфекциях мочевыводящих путей",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "генерализованных септических инфекциях",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "бронхолегочных инфекциях",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 14,
+      "question": "Механизм действия фторхинолонов:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "Блокада дигидрофолатредуктазы",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "Блокада ДНК-гиразы и топоизомеразы IV",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "Конкурентный антагонизм с парааминобензойной кислотой",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "Нарушение формирования 70S-комплекса на рибосоме",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 15,
+      "question": "Механизм действия триметоприма:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "Блокада дигидрофолатредуктазы",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "Блокада ДНК-гиразы и топоизомеразы IV",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "Конкурентный антагонизм с парааминобензойной кислотой",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "Нарушение формирования 70S-комплекса на рибосоме",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 16,
+      "question": "Механизм действия сульфаниламидов:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "Блокада дигидрофолатредуктазы",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "Блокада ДНК-гиразы и топоизомеразы IV",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "Конкурентный антагонизм с парааминобензойной кислотой",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "Нарушение формирования 70S-комплекса на рибосоме",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 17,
+      "question": "Механизм действия линезолида:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "Блокада дигидрофолатредуктазы",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "Блокада ДНК-гиразы и топоизомеразы IV",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "Конкурентный антагонизм с парааминобензойной кислотой",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "Нарушение формирования 70S-комплекса на рибосоме",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 18,
+      "question": "Препараты для лечения амебиаза любой локализации:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "метронидазол",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "хлорохин",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "тинидазол",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "хиниофон",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 19,
+      "question": "Препараты для лечения трихомониаза:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "хлорохин",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "метронидазол",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "тинидазол",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "примахин",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 20,
+      "question": "Препарат для лечения лямблиоза:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "метронидазол",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "пирантел",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "празиквантел",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "левамизол",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 21,
+      "question": "Препараты, применяемые для купирования приступов малярии:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "примахин",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "хлорохин",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "мефлохин",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "гидроксихлорохин",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 22,
+      "question": "Препарат, применяемый для радикального излечения трехдневной малярии (уничтожение тканевых шизонтов):",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "хлорохин",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "мефлохин",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "примахин",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "хинин",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 23,
+      "question": "Механизм действия сульфалена:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "Блокада дигидрофолатредуктазы",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "Блокада ДНК-гиразы и топоизомеразы",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "Конкурентный антагонизм с парааминобензойной кислотой",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "Нарушение формирования 70S-комплекса на рибосоме",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 24,
+      "question": "Механизм действия линезолида:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "Блокада дигидрофолатредуктазы",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "Блокада ДНК-гиразы и топоизомеразы",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "Конкурентный антагонизм с парааминобензойной кислотой",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "Нарушение формирования 70S-комплекса на рибосоме",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 25,
+      "question": "Механизм действия ко-тримоксазола:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "Блокада дигидрофолатредуктазы",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "Блокада ДНК-гиразы и топоизомеразы",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "Конкурентный антагонизм с парааминобензойной кислотой",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "Нарушение формирования 70S-комплекса на рибосоме",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 26,
+      "question": "К какому классу относится моксифлоксацин:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "Оксихинолины",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "Респираторно-анаэробные фторхинолоны",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "Респираторные фторхинолоны",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "Нитрофураны",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "Оксазолидиндионы",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 27,
+      "question": "К какому классу относится левофлоксацин:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "Оксихинолины",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "Респираторно-анаэробные фторхинолоны",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "Респираторные фторхинолоны",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "Нитрофураны",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "Оксазолидиндионы",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    }
+  ]
+};
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderQuiz();
+        });
+
+        function renderQuiz() {
+            const quizForm = document.getElementById('quizForm');
+            quizForm.innerHTML = ''; // Clear previous questions
+            quizData.questions.forEach(q => {
+                const questionBlock = document.createElement('div');
+                questionBlock.classList.add('question-block');
+                questionBlock.setAttribute('data-question-id', q.id);
+
+                const questionText = document.createElement('p');
+                questionText.classList.add('question-text');
+                
+                let qTextHtml = q.question;
+                if (q.fill_in_blanks && q.fill_in_blanks.length > 0) {
+                    let blankIndex = 0;
+                    qTextHtml = q.question.replace(/{.*?}/g, () => {
+                        return `<input type="text" class="fill-in-blank-input" data-blank-index="${blankIndex++}" />`;
+                    });
+                }
+                questionText.innerHTML = `<span>${q.id}. ${qTextHtml}</span> <br> <small>(${q.multi ? 'Несколько правильных ответов' : 'Один правильный ответ'})</small> <span class="question-status-icon"></span>`;
+                questionBlock.appendChild(questionText);
+
+                if (q.options && q.options.length > 0) {
+                    const optionsList = document.createElement('ul');
+                    optionsList.classList.add('options-list');
+                    q.options.forEach(opt => {
+                        const listItem = document.createElement('li');
+                        const inputType = q.multi ? 'checkbox' : 'radio';
+                        const inputName = `question-${q.id}`;
+                        
+                        listItem.innerHTML = `
+                            <label>
+                                <input type="${inputType}" name="${inputName}" value="${opt.id}">
+                                ${opt.text}
+                            </label>
+                        `;
+                        optionsList.appendChild(listItem);
+                    });
+                questionBlock.appendChild(optionsList);
+                }
+
+                if (q.explanation) { // Only create explanation block if explanation exists
+                    const explanationBlock = document.createElement('div');
+                    explanationBlock.classList.add('explanation-block');
+                    explanationBlock.style.display = 'none'; // Initially hidden, will be shown on check
+                    explanationBlock.innerHTML = `<strong>Объяснение:</strong> ${q.explanation}`;
+                    questionBlock.appendChild(explanationBlock);
+                }
+
+                quizForm.appendChild(questionBlock);
+            });
+            document.getElementById('totalQuestions').textContent = quizData.questions.length;
+        }
+
+        function checkAnswers() {
+            let score = 0;
+            let totalQuestions = quizData.questions.length;
+
+            quizData.questions.forEach(q => {
+                const questionBlock = document.querySelector(`[data-question-id="${q.id}"]`);
+                // Clear all previous styling on labels and inputs
+                questionBlock.querySelectorAll('label').forEach(label => {
+                    label.classList.remove('correct-answer', 'incorrect-answer');
+                });
+                questionBlock.querySelectorAll('.fill-in-blank-input').forEach(input => {
+                    input.classList.remove('correct', 'incorrect');
+                });
+
+                // Show explanation block after check, only if explanation exists
+                if (q.explanation) {
+                    const explanationBlock = questionBlock.querySelector('.explanation-block');
+                    explanationBlock.style.display = 'block'; 
+                }
+
+                let isQuestionCorrectOverall = true; // Tracks if the entire question is answered correctly
+                const statusIcon = questionBlock.querySelector('.question-status-icon');
+                statusIcon.style.display = 'block'; // Show icon container
+
+                if (q.fill_in_blanks && q.fill_in_blanks.length > 0) {
+                    const inputs = questionBlock.querySelectorAll('.fill-in-blank-input');
+                    let allBlanksCorrect = true;
+                    inputs.forEach((input, index) => {
+                        const userAnswer = input.value.trim().toLowerCase();
+                        const correctAnswersForBlank = q.fill_in_blanks[index].map(ans => ans.toLowerCase());
+
+                        if (correctAnswersForBlank.includes(userAnswer)) {
+                            input.classList.add('correct');
+                        } else {
+                            input.classList.add('incorrect');
+                            allBlanksCorrect = false;
+                            isQuestionCorrectOverall = false; // Mark question as incorrect if any blank is wrong
+                        }
+                    });
+                    if (allBlanksCorrect) {
+                        score++;
+                    }
+                } else if (q.options && q.options.length > 0) {
+                    const selectedInputs = Array.from(questionBlock.querySelectorAll(`input[name="question-${q.id}"]`));
+                    const correctOptionIds = q.options.filter(opt => opt.correct).map(opt => String(opt.id));
+                    
+                    let userCorrectSelections = 0;
+                    let userIncorrectSelections = 0;
+
+                    selectedInputs.forEach(input => {
+                        const optionId = String(input.value);
+                        const label = input.closest('label');
+
+                        if (input.checked) {
+                            if (correctOptionIds.includes(optionId)) {
+                                label.classList.add('correct-answer');
+                                userCorrectSelections++;
+                            } else {
+                                label.classList.add('incorrect-answer');
+                                userIncorrectSelections++;
+                                isQuestionCorrectOverall = false; // Mark question as incorrect if any wrong option is selected
+                            }
+                        } else { // If not selected
+                            if (correctOptionIds.includes(optionId)) {
+                                // This is a correct answer that the user missed
+                                label.classList.add('missed-correct-answer'); // Highlight with green border
+                                isQuestionCorrectOverall = false;
+                            }
+                        }
+                    });
+
+                    // Check if all correct options were selected and no incorrect ones were selected
+                    if (userCorrectSelections === correctOptionIds.length && userIncorrectSelections === 0 && selectedInputs.filter(input => input.checked).length === correctOptionIds.length) {
+                        score++;
+                    } else {
+                        isQuestionCorrectOverall = false; // Ensure question is marked incorrect if not all conditions met
+                    }
+                }
+
+                // Set question status icon
+                if (isQuestionCorrectOverall) {
+                    statusIcon.innerHTML = '&#10004;'; // Green checkmark
+                    statusIcon.classList.add('correct');
+                    statusIcon.classList.remove('incorrect');
+                } else {
+                    statusIcon.innerHTML = '&#10006;'; // Red X
+                    statusIcon.classList.add('incorrect');
+                    statusIcon.classList.remove('correct');
+                }
+            });
+            document.getElementById('score').textContent = score;
+            const percentage = totalQuestions > 0 ? ((score / totalQuestions) * 100).toFixed(1) : 0;
+            document.getElementById('percentage').textContent = percentage;
+            document.getElementById('results').style.display = 'block';
+        }
+
+        function resetQuiz() {
+            const quizForm = document.getElementById('quizForm');
+            quizForm.reset(); // Reset form inputs
+
+            quizData.questions.forEach(q => {
+                const questionBlock = document.querySelector(`[data-question-id="${q.id}"]`);
+                // Remove all result-related classes
+                questionBlock.querySelectorAll('.options-list label').forEach(label => {
+                    label.classList.remove('correct-answer', 'incorrect-answer', 'missed-correct-answer');
+                });
+                questionBlock.querySelectorAll('.fill-in-blank-input').forEach(input => {
+                    input.classList.remove('correct', 'incorrect');
+                });
+                // Hide explanations
+                if (questionBlock.querySelector('.explanation-block')) { // Check if explanation block exists
+                    questionBlock.querySelector('.explanation-block').style.display = 'none';
+                }
+                // Hide and clear status icon
+                const statusIcon = questionBlock.querySelector('.question-status-icon');
+                if (statusIcon) {
+                    statusIcon.style.display = 'none';
+                    statusIcon.innerHTML = '';
+                    statusIcon.classList.remove('correct', 'incorrect');
+                }
+            });
+            document.getElementById('results').style.display = 'none';
+            document.getElementById('score').textContent = '0';
+            window.scrollTo(0, 0); // Scroll to top
+        }
+    </script>
+</body>
+</html>

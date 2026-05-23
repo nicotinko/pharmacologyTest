@@ -1,0 +1,620 @@
+{
+  "title": "Анальгетики. НПВС",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Рецепторы, активация которых вызывает супраспинальную анальгезию, эйфорию и угнетение дыхательного центра -",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "эпсилон-рецепторы",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "дельта-рецепторы",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "каппа-рецепторы",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "мю-рецепторы",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 2,
+      "question": "Все перечисленные ниже отличия буторфанола от морфина верны, за исключением -",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "меньше угнетает дыхательный центр",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "реже вызывает развитие лекарственной зависимости",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "не вызывает спазма гладких мышц кишечника",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "анальгетический эффект слабо выражен",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 3,
+      "question": "Препарат, наиболее часто используемый в нейролептанальгезии -",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "метамизол",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "тримепиридин",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "фентанил",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "налтрексон",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "морфин",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 4,
+      "question": "Все перечисленные свойства диклофенака верны, за исключением -",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "обладает противовоспалительным действием",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "обладает жаропонижающим эффектом",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "обладает анальгетическим действием",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "является избирательным блокатором циклооксигеназы-2 (ЦОГ-2)",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 5,
+      "question": "Препарат, относящийся к НПВС, который широко применяется для профилактики тромбозов -",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "диклофенак",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "ацетилсалициловая кислота",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "индометацин",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "парацетамол",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "мелоксикам",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 6,
+      "question": "Препарат, который может использоваться для консервативного лечения новорожденных с открытым артериальным протоком -",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "ацетилсалициловая кислота",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "нимесулид",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "мелоксикам",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "индометацин",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "парацетамол",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 7,
+      "question": "Antiдот при отравлении морфином -",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "цитизин",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "тримепиридин",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "налоксон",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "трамадол",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 8,
+      "question": "Препараты, относящиеся к агонистам-антагонистам опиатных рецепторов -",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "тримепиридин",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "фентанил",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "буторфанол",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "морфин",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "налбуфин",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 9,
+      "question": "Отличия ацетаминофена (парацетамола) от ацетилсалициловой кислоты -",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "не обладает ульцерогенным действием",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "не оказывает жаропонижающего эффекта",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "не обладает противовоспалительным действием",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "не влияет на ЦОГ",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "не действует на ЦОГ в периферических тканях",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 10,
+      "question": "Отличия целекоксиба от индометацина:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "не действует на ЦОГ-1",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "не действует в периферических тканях",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "не обладает противовоспалительным эффектом",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "редко вызывает побочные эффекты",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "является более токсичным",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 11,
+      "question": "Побочные эффекты индометацина –",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "нарушения центральной нервной системы",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "артралгии",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "лейкопения, агранулоцитоз",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "угнетение дыхательного центра",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "ульцерогенное действие",
+          "correct": true
+        },
+        {
+          "id": 6,
+          "text": "отеки",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 12,
+      "question": "Механизмы действия ацетилсалициловой кислоты –",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "блокада фосфолипазы А2 и образования арахидоновой кислоты",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "необратимое ингибирование ЦОГ-1 и ЦОГ-2 и синтеза простагландинов",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "блокада липооксигеназы и образования лейкотриенов",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "ингибирование синтеза тромбоксана",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "избирательная блокада ЦОГ-2",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 13,
+      "question": "Свойства опиоидных анальгетиков:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "жаропонижающее действие",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "противокашлевой эффект",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "угнетение дыхательного центра",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "развитие лекарственной зависимости",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "противовоспалительное действие",
+          "correct": false
+        },
+        {
+          "id": 6,
+          "text": "возникновение эйфории",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 14,
+      "question": "Свойства неопиоидных анальгетиков:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "жаропонижающее действие",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "противокашлевой эффект",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "угнетение дыхательного центра",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "развитие лекарственной зависимости",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "противовоспалительное действие",
+          "correct": true
+        },
+        {
+          "id": 6,
+          "text": "возникновение эйфории",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 15,
+      "question": "Система организма, участвующая в подавлении боли, называется {антиноцицептивная|антиноцицептивной}",
+      "multi": false,
+      "explanation": "",
+      "options": [],
+      "fill_in_blanks": [
+        [
+          "антиноцицептивная",
+          "антиноцицептивной"
+        ]
+      ]
+    },
+    {
+      "id": 16,
+      "question": "Все положения, касающиеся колхицина, верны, за исключением -",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "снижает синтез мочевой кислоты в тканях",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "применяется при остром приступе подагры",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "при длительном применении могут развиться агранулоцитоз и алопеция",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "обладает антимитотической активностью",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 17,
+      "question": "Препарат, повышающий растворимость солей мочевой кислоты -",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "блемарен",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "индометацин",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "аллопуринол",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "колхицин",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "фебуксостат",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 18,
+      "question": "Блокатор ксантиноксидазы непуринового строения, снижающий синтез мочевой кислоты -",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "индометацин",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "фебуксостат",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "аллопуринол",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "колхицин",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "блемарен",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 19,
+      "question": "Препараты, блокирующие ксантиноксидазу и снижающие синтез мочевой кислоты -",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "индометацин",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "фебуксостат",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "аллопуринол",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "колхицин",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "блемарен",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    }
+  ]
+}

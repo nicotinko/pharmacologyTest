@@ -1,0 +1,1144 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анксиолитики. Снотворные. Противосудорожные</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #0056b3;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .question-block {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .question-text {
+            font-weight: bold;
+            margin-bottom: 10px;
+            line-height: 1.5;
+            position: relative; /* For positioning the icon */
+            padding-right: 30px; /* Add space for the icon */
+        }
+        .question-status-icon {
+            position: absolute;
+            top: 8px; /* Adjust vertical position */
+            right: 8px; /* Adjust horizontal position */
+            font-size: 1.2em;
+            display: none; /* Hidden by default */
+        }
+        .question-status-icon.correct {
+            color: #28a745; /* Green */
+        }
+        .question-status-icon.incorrect {
+            color: #dc3545; /* Red */
+        }
+        .options-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+        .options-list li {
+            margin-bottom: 8px;
+        }
+        .options-list label {
+            display: block;
+            padding: 8px;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        .options-list label:hover {
+            background-color: #e9e9e9;
+        }
+        input[type="radio"], input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        label.correct-answer { /* Corrected selector */
+            background-color: #e6ffe6;
+            border-color: #a3e6a3;
+        }
+        label.incorrect-answer { /* Corrected selector */
+            background-color: #ffe6e6;
+            border-color: #e6a3a3;
+        }
+        label.missed-correct-answer { /* New selector for not selected correct answers */
+            border: 2px solid #28a745; /* Green border */
+        }
+        .explanation-block {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #eaf2f8;
+            border: 1px solid #cce7ff;
+            border-radius: 5px;
+            display: none; /* Hidden by default */
+        }
+        .explanation-toggle {
+            cursor: pointer;
+            color: #0056b3;
+            text-decoration: underline;
+            margin-top: 10px;
+            display: block;
+        }
+        .results-block {
+            margin-top: 30px;
+            padding: 20px;
+            border: 2px solid #0056b3;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: bold;
+            display: none;
+        }
+        .buttons-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .buttons-container button {
+            padding: 10px 20px;
+            font-size: 1em;
+            margin: 0 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        .buttons-container button.check-button {
+            background-color: #28a745;
+            color: white;
+        }
+        .buttons-container button.check-button:hover {
+            background-color: #218838;
+        }
+        .buttons-container button.reset-button {
+            background-color: #dc3545;
+            color: white;
+        }
+        .buttons-container button.reset-button:hover {
+            background-color: #c82333;
+        }
+        .fill-in-blank-input {
+            border: 1px solid #ccc;
+            padding: 5px;
+            border-radius: 3px;
+            width: 150px; /* Adjust as needed */
+        }
+        .fill-in-blank-input.correct {
+            background-color: #e6ffe6;
+            border-color: #a3e6a3;
+        }
+        .fill-in-blank-input.incorrect {
+            background-color: #ffe6e6;
+            border-color: #e6a3a3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Анксиолитики. Снотворные. Противосудорожные</h1>
+        <form id="quizForm">
+            <!-- Questions will be rendered here by JavaScript -->
+        </form>
+        <div class="buttons-container">
+            <button type="button" class="check-button" onclick="checkAnswers()">Проверить</button>
+            <button type="button" class="reset-button" onclick="resetQuiz()">Сбросить</button>
+        </div>
+        <div id="results" class="results-block">
+            Ваш результат: <span id="score">0</span> из <span id="totalQuestions">0</span> (<span id="percentage">0</span>%)
+        </div>
+    </div>
+
+    <script>
+        const quizData = {
+  "title": "Анксиолитики. Снотворные. Противосудорожные",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Эффекты, типичные для диазепама:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "противорвотный",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "седативный",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "аналептический",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "миорелаксирующий",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "противотревожный",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 2,
+      "question": "Механизмы действия анксиолитиков:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "блокада Д2-рецепторов мезолимбической области",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "образование комплекса с субъединицей ГАМК-рецептора с повышением его аффинности к медиатору",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "блокада аденозиновых рецепторов",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "влияние на серотониновые рецепторы",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "активация α-адренорецепторов ретикулярной формации",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 3,
+      "question": "Показания к применению диазепама:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "тревожное расстройство",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "депрессия с вялостью и заторможенностью",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "эпилептический статус",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "премедикация перед операцией",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "психозы различной этиологии",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 4,
+      "question": "Побочные эффекты диазепама:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "экстрапирамидные нарушения",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "амнестические нарушения",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "дневная сонливость",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "лекарственная зависимость",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "ортостатическая гипотензия",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 5,
+      "question": "К «дневным» транквилизаторам относятся:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "тофизопам",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "нитразепам",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "золпидем",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "диазепам",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "медазепам",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 6,
+      "question": "Отличительной особенностью «дневных» транквилизаторов является:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "отсутствие противотревожного эффекта",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "минимально выраженный седативный и миорелаксирующий эффекты",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "отсутствие риска развития лекарственной зависимости",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "высокая противосудорожная активность",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 7,
+      "question": "Механизм действия тофизопама:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "аллостерический модулятор ГАМК-А рецепторов",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "избирательный ингибитор фосфодиэстеразы (ФДЭ-4 и ФДЭ-10)",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "агонист 5-HT1A серотониновых рецепторов",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "блокада H1-гистаминовых рецепторов",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 8,
+      "question": "Анксиолитик, являющийся селективным агонистом серотониновых 5-HT1A-рецепторов, не вызывающий миорелаксации и лекарственной зависимости:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "диазепам",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "буспирон",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "тофизопам",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "гидроксизин",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "фабомотизол",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 9,
+      "question": "К небензодиазепиновым анксиолитикам относятся:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "фабомотизол",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "бромдигидрохлорфенилбензодиазепин",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "гидроксизин",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "тофизопам",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "буспирон",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 10,
+      "question": "Препараты бензодиазепинового ряда, применяемые как снотворные:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "нитразепам",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "золпидем",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "флунитразепам",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "доксиламин",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "зопиклон",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 11,
+      "question": "Z-препараты (небензодиазепиновые агонисты бензодиазепиновых рецепторов):",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "золпидем",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "зопиклон",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "залеплон",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "доксиламин",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "мелатонин",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 12,
+      "question": "Блокатор H1-гистаминовых рецепторов, разрешенный к применению в качестве снотворного во время беременности:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "золпидем",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "фенобарбитал",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "нитразепам",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "доксиламин",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "мелатонин",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 13,
+      "question": "Снотворные средства, являющиеся агонистами мелатониновых рецепторов:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "рамелтеон",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "мелатонин",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "золпидем",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "доксиламин",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 14,
+      "question": "Побочные эффекты, характерные для бензодиазепиновых снотворных средств:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "феномен «отдачи»",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "постсомнические нарушения (сонливость, вялость на следующий день)",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "кумуляция при повторном применении",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "высокая терапевтическая широта",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "развитие лекарственной зависимости при длительном применении",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 15,
+      "question": "Достоинства Z-препаратов по сравнению с бензодиазепинами:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "меньшая терапевтическая широта",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "в меньшей степени нарушают структуру сна",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "менее выраженное последействие (дневная сонливость)",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "меньший риск развития привыкания и зависимости при краткосрочном курсе",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 16,
+      "question": "Препараты для профилактики больших судорожных припадков (grand mal):",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "карбамазепин",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "этосуксимид",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "вальпроевая кислота",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "фенитоин",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "диазепам",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 17,
+      "question": "Механизм действия этосуксимида:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "Активация ГАМК-трансаминазы",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "Блокада натриевых каналов мембран нейронов",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "Блокада кальциевых каналов Т-типа в нейронах таламуса",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "Блокада глутаматных AMPA-рецепторов",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 18,
+      "question": "Механизм действия карбамазепина:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "увеличивает ГАМК-ергическое торможение",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "блокирует кальциевые каналы Т-типа",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "эффективен только при малых припадках",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "эффективен при больших судорожных и парциальных припадках",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "блокирует натриевые каналы нейрональных мембран и тормозит выделение глутамата",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 19,
+      "question": "Препарат для терапии судорог любой этиологии и эпилептического статуса:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "вальпроевая кислота",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "диазепам",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "этосуксимид",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "ламотриджин",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "карбамазепин",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 20,
+      "question": "Препарат для профилактики малых припадков при эпилепсии:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "хлорпромазин",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "этосуксимид",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "фенобарбитал",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "амитриптилин",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "лития карбонат",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 21,
+      "question": "К антагонистам глутаматных рецепторов относится:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "перампанел",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "габапентин",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "фенитоин",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "леветирацетам",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 22,
+      "question": "Уменьшают глутаматергические влияния все перечисленные препараты, кроме:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "фелбамат",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "перампанел",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "диазепам",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "леветирацетам",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 23,
+      "question": "Механизмы действия, типичные для противоэпилептических средств:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "блокада натриевых каналов нейрональных мембран",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "блокада ГАМК-рецепторов",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "стимуляция глутаматергической системы",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "блокада кальциевых каналов Т-типа",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "активация ГАМК-системы",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 24,
+      "question": "Побочные эффекты, возникающие при длительном применении фенитоина:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "тахикардия",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "диплопия, атаксия",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "гиперплазия десен",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "мегалобластная анемия",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "гирсутизм",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    }
+  ]
+};
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderQuiz();
+        });
+
+        function renderQuiz() {
+            const quizForm = document.getElementById('quizForm');
+            quizForm.innerHTML = ''; // Clear previous questions
+            quizData.questions.forEach(q => {
+                const questionBlock = document.createElement('div');
+                questionBlock.classList.add('question-block');
+                questionBlock.setAttribute('data-question-id', q.id);
+
+                const questionText = document.createElement('p');
+                questionText.classList.add('question-text');
+                
+                let qTextHtml = q.question;
+                if (q.fill_in_blanks && q.fill_in_blanks.length > 0) {
+                    let blankIndex = 0;
+                    qTextHtml = q.question.replace(/{.*?}/g, () => {
+                        return `<input type="text" class="fill-in-blank-input" data-blank-index="${blankIndex++}" />`;
+                    });
+                }
+                questionText.innerHTML = `<span>${q.id}. ${qTextHtml}</span> <br> <small>(${q.multi ? 'Несколько правильных ответов' : 'Один правильный ответ'})</small> <span class="question-status-icon"></span>`;
+                questionBlock.appendChild(questionText);
+
+                if (q.options && q.options.length > 0) {
+                    const optionsList = document.createElement('ul');
+                    optionsList.classList.add('options-list');
+                    q.options.forEach(opt => {
+                        const listItem = document.createElement('li');
+                        const inputType = q.multi ? 'checkbox' : 'radio';
+                        const inputName = `question-${q.id}`;
+                        
+                        listItem.innerHTML = `
+                            <label>
+                                <input type="${inputType}" name="${inputName}" value="${opt.id}">
+                                ${opt.text}
+                            </label>
+                        `;
+                        optionsList.appendChild(listItem);
+                    });
+                questionBlock.appendChild(optionsList);
+                }
+
+                if (q.explanation) { // Only create explanation block if explanation exists
+                    const explanationBlock = document.createElement('div');
+                    explanationBlock.classList.add('explanation-block');
+                    explanationBlock.style.display = 'none'; // Initially hidden, will be shown on check
+                    explanationBlock.innerHTML = `<strong>Объяснение:</strong> ${q.explanation}`;
+                    questionBlock.appendChild(explanationBlock);
+                }
+
+                quizForm.appendChild(questionBlock);
+            });
+            document.getElementById('totalQuestions').textContent = quizData.questions.length;
+        }
+
+        function checkAnswers() {
+            let score = 0;
+            let totalQuestions = quizData.questions.length;
+
+            quizData.questions.forEach(q => {
+                const questionBlock = document.querySelector(`[data-question-id="${q.id}"]`);
+                // Clear all previous styling on labels and inputs
+                questionBlock.querySelectorAll('label').forEach(label => {
+                    label.classList.remove('correct-answer', 'incorrect-answer');
+                });
+                questionBlock.querySelectorAll('.fill-in-blank-input').forEach(input => {
+                    input.classList.remove('correct', 'incorrect');
+                });
+
+                // Show explanation block after check, only if explanation exists
+                if (q.explanation) {
+                    const explanationBlock = questionBlock.querySelector('.explanation-block');
+                    explanationBlock.style.display = 'block'; 
+                }
+
+                let isQuestionCorrectOverall = true; // Tracks if the entire question is answered correctly
+                const statusIcon = questionBlock.querySelector('.question-status-icon');
+                statusIcon.style.display = 'block'; // Show icon container
+
+                if (q.fill_in_blanks && q.fill_in_blanks.length > 0) {
+                    const inputs = questionBlock.querySelectorAll('.fill-in-blank-input');
+                    let allBlanksCorrect = true;
+                    inputs.forEach((input, index) => {
+                        const userAnswer = input.value.trim().toLowerCase();
+                        const correctAnswersForBlank = q.fill_in_blanks[index].map(ans => ans.toLowerCase());
+
+                        if (correctAnswersForBlank.includes(userAnswer)) {
+                            input.classList.add('correct');
+                        } else {
+                            input.classList.add('incorrect');
+                            allBlanksCorrect = false;
+                            isQuestionCorrectOverall = false; // Mark question as incorrect if any blank is wrong
+                        }
+                    });
+                    if (allBlanksCorrect) {
+                        score++;
+                    }
+                } else if (q.options && q.options.length > 0) {
+                    const selectedInputs = Array.from(questionBlock.querySelectorAll(`input[name="question-${q.id}"]`));
+                    const correctOptionIds = q.options.filter(opt => opt.correct).map(opt => String(opt.id));
+                    
+                    let userCorrectSelections = 0;
+                    let userIncorrectSelections = 0;
+
+                    selectedInputs.forEach(input => {
+                        const optionId = String(input.value);
+                        const label = input.closest('label');
+
+                        if (input.checked) {
+                            if (correctOptionIds.includes(optionId)) {
+                                label.classList.add('correct-answer');
+                                userCorrectSelections++;
+                            } else {
+                                label.classList.add('incorrect-answer');
+                                userIncorrectSelections++;
+                                isQuestionCorrectOverall = false; // Mark question as incorrect if any wrong option is selected
+                            }
+                        } else { // If not selected
+                            if (correctOptionIds.includes(optionId)) {
+                                // This is a correct answer that the user missed
+                                label.classList.add('missed-correct-answer'); // Highlight with green border
+                                isQuestionCorrectOverall = false;
+                            }
+                        }
+                    });
+
+                    // Check if all correct options were selected and no incorrect ones were selected
+                    if (userCorrectSelections === correctOptionIds.length && userIncorrectSelections === 0 && selectedInputs.filter(input => input.checked).length === correctOptionIds.length) {
+                        score++;
+                    } else {
+                        isQuestionCorrectOverall = false; // Ensure question is marked incorrect if not all conditions met
+                    }
+                }
+
+                // Set question status icon
+                if (isQuestionCorrectOverall) {
+                    statusIcon.innerHTML = '&#10004;'; // Green checkmark
+                    statusIcon.classList.add('correct');
+                    statusIcon.classList.remove('incorrect');
+                } else {
+                    statusIcon.innerHTML = '&#10006;'; // Red X
+                    statusIcon.classList.add('incorrect');
+                    statusIcon.classList.remove('correct');
+                }
+            });
+            document.getElementById('score').textContent = score;
+            const percentage = totalQuestions > 0 ? ((score / totalQuestions) * 100).toFixed(1) : 0;
+            document.getElementById('percentage').textContent = percentage;
+            document.getElementById('results').style.display = 'block';
+        }
+
+        function resetQuiz() {
+            const quizForm = document.getElementById('quizForm');
+            quizForm.reset(); // Reset form inputs
+
+            quizData.questions.forEach(q => {
+                const questionBlock = document.querySelector(`[data-question-id="${q.id}"]`);
+                // Remove all result-related classes
+                questionBlock.querySelectorAll('.options-list label').forEach(label => {
+                    label.classList.remove('correct-answer', 'incorrect-answer', 'missed-correct-answer');
+                });
+                questionBlock.querySelectorAll('.fill-in-blank-input').forEach(input => {
+                    input.classList.remove('correct', 'incorrect');
+                });
+                // Hide explanations
+                if (questionBlock.querySelector('.explanation-block')) { // Check if explanation block exists
+                    questionBlock.querySelector('.explanation-block').style.display = 'none';
+                }
+                // Hide and clear status icon
+                const statusIcon = questionBlock.querySelector('.question-status-icon');
+                if (statusIcon) {
+                    statusIcon.style.display = 'none';
+                    statusIcon.innerHTML = '';
+                    statusIcon.classList.remove('correct', 'incorrect');
+                }
+            });
+            document.getElementById('results').style.display = 'none';
+            document.getElementById('score').textContent = '0';
+            window.scrollTo(0, 0); // Scroll to top
+        }
+    </script>
+</body>
+</html>

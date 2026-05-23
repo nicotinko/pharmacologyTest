@@ -1,0 +1,786 @@
+{
+  "title": "Анксиолитики. Снотворные. Противосудорожные",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Эффекты, типичные для диазепама:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "противорвотный",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "седативный",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "аналептический",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "миорелаксирующий",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "противотревожный",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 2,
+      "question": "Механизмы действия анксиолитиков:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "блокада Д2-рецепторов мезолимбической области",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "образование комплекса с субъединицей ГАМК-рецептора с повышением его аффинности к медиатору",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "блокада аденозиновых рецепторов",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "влияние на серотониновые рецепторы",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "активация α-адренорецепторов ретикулярной формации",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 3,
+      "question": "Показания к применению диазепама:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "тревожное расстройство",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "депрессия с вялостью и заторможенностью",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "эпилептический статус",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "премедикация перед операцией",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "психозы различной этиологии",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 4,
+      "question": "Побочные эффекты диазепама:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "экстрапирамидные нарушения",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "амнестические нарушения",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "дневная сонливость",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "лекарственная зависимость",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "ортостатическая гипотензия",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 5,
+      "question": "К «дневным» транквилизаторам относятся:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "тофизопам",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "нитразепам",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "золпидем",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "диазепам",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "медазепам",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 6,
+      "question": "Отличительной особенностью «дневных» транквилизаторов является:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "отсутствие противотревожного эффекта",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "минимально выраженный седативный и миорелаксирующий эффекты",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "отсутствие риска развития лекарственной зависимости",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "высокая противосудорожная активность",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 7,
+      "question": "Механизм действия тофизопама:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "аллостерический модулятор ГАМК-А рецепторов",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "избирательный ингибитор фосфодиэстеразы (ФДЭ-4 и ФДЭ-10)",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "агонист 5-HT1A серотониновых рецепторов",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "блокада H1-гистаминовых рецепторов",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 8,
+      "question": "Анксиолитик, являющийся селективным агонистом серотониновых 5-HT1A-рецепторов, не вызывающий миорелаксации и лекарственной зависимости:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "диазепам",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "буспирон",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "тофизопам",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "гидроксизин",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "фабомотизол",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 9,
+      "question": "К небензодиазепиновым анксиолитикам относятся:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "фабомотизол",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "бромдигидрохлорфенилбензодиазепин",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "гидроксизин",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "тофизопам",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "буспирон",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 10,
+      "question": "Препараты бензодиазепинового ряда, применяемые как снотворные:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "нитразепам",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "золпидем",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "флунитразепам",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "доксиламин",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "зопиклон",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 11,
+      "question": "Z-препараты (небензодиазепиновые агонисты бензодиазепиновых рецепторов):",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "золпидем",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "зопиклон",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "залеплон",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "доксиламин",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "мелатонин",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 12,
+      "question": "Блокатор H1-гистаминовых рецепторов, разрешенный к применению в качестве снотворного во время беременности:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "золпидем",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "фенобарбитал",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "нитразепам",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "доксиламин",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "мелатонин",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 13,
+      "question": "Снотворные средства, являющиеся агонистами мелатониновых рецепторов:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "рамелтеон",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "мелатонин",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "золпидем",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "доксиламин",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 14,
+      "question": "Побочные эффекты, характерные для бензодиазепиновых снотворных средств:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "феномен «отдачи»",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "постсомнические нарушения (сонливость, вялость на следующий день)",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "кумуляция при повторном применении",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "высокая терапевтическая широта",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "развитие лекарственной зависимости при длительном применении",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 15,
+      "question": "Достоинства Z-препаратов по сравнению с бензодиазепинами:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "меньшая терапевтическая широта",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "в меньшей степени нарушают структуру сна",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "менее выраженное последействие (дневная сонливость)",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "меньший риск развития привыкания и зависимости при краткосрочном курсе",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 16,
+      "question": "Препараты для профилактики больших судорожных припадков (grand mal):",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "карбамазепин",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "этосуксимид",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "вальпроевая кислота",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "фенитоин",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "диазепам",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 17,
+      "question": "Механизм действия этосуксимида:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "Активация ГАМК-трансаминазы",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "Блокада натриевых каналов мембран нейронов",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "Блокада кальциевых каналов Т-типа в нейронах таламуса",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "Блокада глутаматных AMPA-рецепторов",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 18,
+      "question": "Механизм действия карбамазепина:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "увеличивает ГАМК-ергическое торможение",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "блокирует кальциевые каналы Т-типа",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "эффективен только при малых припадках",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "эффективен при больших судорожных и парциальных припадках",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "блокирует натриевые каналы нейрональных мембран и тормозит выделение глутамата",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 19,
+      "question": "Препарат для терапии судорог любой этиологии и эпилептического статуса:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "вальпроевая кислота",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "диазепам",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "этосуксимид",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "ламотриджин",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "карбамазепин",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 20,
+      "question": "Препарат для профилактики малых припадков при эпилепсии:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "хлорпромазин",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "этосуксимид",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "фенобарбитал",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "амитриптилин",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "лития карбонат",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 21,
+      "question": "К антагонистам глутаматных рецепторов относится:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "перампанел",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "габапентин",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "фенитоин",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "леветирацетам",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 22,
+      "question": "Уменьшают глутаматергические влияния все перечисленные препараты, кроме:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "фелбамат",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "перампанел",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "диазепам",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "леветирацетам",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 23,
+      "question": "Механизмы действия, типичные для противоэпилептических средств:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "блокада натриевых каналов нейрональных мембран",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "блокада ГАМК-рецепторов",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "стимуляция глутаматергической системы",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "блокада кальциевых каналов Т-типа",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "активация ГАМК-системы",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 24,
+      "question": "Побочные эффекты, возникающие при длительном применении фенитоина:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "тахикардия",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "диплопия, атаксия",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "гиперплазия десен",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "мегалобластная анемия",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "гирсутизм",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    }
+  ]
+}
