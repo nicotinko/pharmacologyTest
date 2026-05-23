@@ -68,6 +68,9 @@
             background-color: #ffe6e6;
             border-color: #e6a3a3;
         }
+        label.missed-correct-answer { /* New selector for not selected correct answers */
+            border: 2px solid #28a745; /* Green border */
+        }
         .explanation-block {
             margin-top: 15px;
             padding: 10px;
@@ -764,7 +767,7 @@
                     const explanationBlock = document.createElement('div');
                     explanationBlock.classList.add('explanation-block');
                     explanationBlock.style.display = 'none'; // Initially hidden, will be shown on check
-                    explanationBlock.innerHTML = q.explanation;
+                    explanationBlock.innerHTML = `<strong>Объяснение:</strong> ${q.explanation}`;
                     questionBlock.appendChild(explanationBlock);
                 }
 
@@ -834,7 +837,7 @@
                         } else { // If not selected
                             if (correctOptionIds.includes(optionId)) {
                                 // This is a correct answer that the user missed
-                                label.classList.add('correct-answer'); // Highlight the missed correct answer
+                                label.classList.add('missed-correct-answer'); // Highlight with green border
                                 isQuestionCorrectOverall = false;
                             }
                         }
@@ -860,7 +863,7 @@
                 const questionBlock = document.querySelector(`[data-question-id="${q.id}"]`);
                 // Remove all result-related classes
                 questionBlock.querySelectorAll('.options-list label').forEach(label => {
-                    label.classList.remove('correct-answer', 'incorrect-answer');
+                    label.classList.remove('correct-answer', 'incorrect-answer', 'missed-correct-answer');
                 });
                 questionBlock.querySelectorAll('.fill-in-blank-input').forEach(input => {
                     input.classList.remove('correct', 'incorrect');
@@ -872,6 +875,7 @@
             });
             document.getElementById('results').style.display = 'none';
             document.getElementById('score').textContent = '0';
+            window.scrollTo(0, 0); // Scroll to top
         }
     </script>
 </body>
