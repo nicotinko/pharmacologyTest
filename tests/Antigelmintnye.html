@@ -159,7 +159,7 @@
       "id": 1,
       "question": "Препараты, нарушающие нервно-мышечную систему червей:",
       "multi": true,
-      "explanation": "Пояснение: Правильные варианты выбраны потому, что выбранный(е) вариант(ы) соответствует(ют) известным фармакологическим свойствам и классификации, а также принципам действия препаратов данной группы.",
+      "explanation": "",
       "options": [
         {
           "id": 1,
@@ -193,7 +193,7 @@
       "id": 2,
       "question": "Preпараты, блокирующие энергетические процессы гельминтов:",
       "multi": true,
-      "explanation": "Пояснение: Правильные варианты выбраны потому, что выбранный(е) вариант(ы) соответствует(ют) известным фармакологическим свойствам и классификации, а также принципам действия препаратов данной группы.",
+      "explanation": "",
       "options": [
         {
           "id": 1,
@@ -222,7 +222,7 @@
       "id": 3,
       "question": "Препараты, эффективные для лечения энтеробиоза и аскаридоза:",
       "multi": true,
-      "explanation": "Пояснение: Правильные варианты выбраны потому, что выбранный(е) вариант(ы) соответствует(ют) известным фармакологическим свойствам и классификации, а также принципам действия препаратов данной группы.",
+      "explanation": "",
       "options": [
         {
           "id": 1,
@@ -251,7 +251,7 @@
       "id": 4,
       "question": "Препараты, применяемые при цестодозах:",
       "multi": true,
-      "explanation": "Пояснение: Правильные варианты выбраны потому, что выбранный(е) вариант(ы) соответствует(ют) известным фармакологическим свойствам и классификации, а также принципам действия препаратов данной группы.",
+      "explanation": "",
       "options": [
         {
           "id": 1,
@@ -280,7 +280,7 @@
       "id": 5,
       "question": "Показание к левамизолу:",
       "multi": false,
-      "explanation": "Пояснение: Правильный вариант выбран потому, что выбранный(е) вариант(ы) соответствует(ют) известным фармакологическим свойствам и классификации, а также принципам действия препаратов данной группы.",
+      "explanation": "",
       "options": [
         {
           "id": 1,
@@ -309,7 +309,7 @@
       "id": 6,
       "question": "Препарат, повышающий проницаемость мембран к Ca2+, вызывающий паралич червей и повреждающий их покровы:",
       "multi": false,
-      "explanation": "Пояснение: Правильный вариант выбран потому, что выбранный(е) вариант(ы) соответствует(ют) известным фармакологическим свойствам и классификации, а также принципам действия препаратов данной группы.",
+      "explanation": "",
       "options": [
         {
           "id": 1,
@@ -338,7 +338,7 @@
       "id": 7,
       "question": "Противоглистный препарат, обладающий иммуномодулирующими свойствами:",
       "multi": false,
-      "explanation": "Пояснение: Правильный вариант выбран потому, что выбранный(е) вариант(ы) соответствует(ют) известным фармакологическим свойствам и классификации, а также принципам действия препаратов данной группы.",
+      "explanation": "",
       "options": [
         {
           "id": 1,
@@ -410,27 +410,13 @@
                 questionBlock.appendChild(optionsList);
                 }
 
-                const explanationToggle = document.createElement('span');
-                explanationToggle.classList.add('explanation-toggle');
-                explanationToggle.textContent = 'Показать пояснение';
-                explanationToggle.style.display = 'none'; // Initially hidden
-                explanationToggle.onclick = () => {
-                    const explanationBlock = questionBlock.querySelector('.explanation-block');
-                    if (explanationBlock.style.display === 'none' || explanationBlock.style.display === '') {
-                        explanationBlock.style.display = 'block';
-                        explanationToggle.textContent = 'Скрыть пояснение';
-                    } else {
-                        explanationBlock.style.display = 'none';
-                        explanationToggle.textContent = 'Показать пояснение';
-                    }
-                };
-                questionBlock.appendChild(explanationToggle);
-
-                const explanationBlock = document.createElement('div');
-                explanationBlock.classList.add('explanation-block');
-                explanationBlock.style.display = 'none'; // Initially hidden
-                explanationBlock.innerHTML = q.explanation;
-                questionBlock.appendChild(explanationBlock);
+                if (q.explanation) { // Only create explanation block if explanation exists
+                    const explanationBlock = document.createElement('div');
+                    explanationBlock.classList.add('explanation-block');
+                    explanationBlock.style.display = 'none'; // Initially hidden, will be shown on check
+                    explanationBlock.innerHTML = q.explanation;
+                    questionBlock.appendChild(explanationBlock);
+                }
 
                 quizForm.appendChild(questionBlock);
             });
@@ -451,12 +437,11 @@
                     input.classList.remove('correct', 'incorrect');
                 });
 
-                // Show explanation block and toggle after check
-                const explanationBlock = questionBlock.querySelector('.explanation-block');
-                const explanationToggle = questionBlock.querySelector('.explanation-toggle');
-                explanationBlock.style.display = 'block'; 
-                explanationToggle.style.display = 'block'; // Make toggle visible after check
-                explanationToggle.textContent = 'Скрыть пояснение';
+                // Show explanation block after check, only if explanation exists
+                if (q.explanation) {
+                    const explanationBlock = questionBlock.querySelector('.explanation-block');
+                    explanationBlock.style.display = 'block'; 
+                }
 
                 let isQuestionCorrectOverall = true; // Tracks if the entire question is answered correctly
 
@@ -531,8 +516,9 @@
                     input.classList.remove('correct', 'incorrect');
                 });
                 // Hide explanations
-                questionBlock.querySelector('.explanation-block').style.display = 'none';
-                questionBlock.querySelector('.explanation-toggle').textContent = 'Показать пояснение';
+                if (questionBlock.querySelector('.explanation-block')) { // Check if explanation block exists
+                    questionBlock.querySelector('.explanation-block').style.display = 'none';
+                }
             });
             document.getElementById('results').style.display = 'none';
             document.getElementById('score').textContent = '0';
