@@ -1,0 +1,374 @@
+{
+  "title": "Терапия ХСН",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Все перечисленные препараты могут применяться для лечения хронической сердечной недостаточности (ХСН), за исключением:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "изосорбида динитрат",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "резерпин",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "дигоксин",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "гидрохлортиазид",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "эналаприл",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 2,
+      "question": "Препарат, активирующий β1-адренорецепторы миокарда, применяемый при острой сердечной недостаточности (ОСН):",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "дигоксин",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "спиронолактон",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "эналаприл",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "левосимендан",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "добутамин",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 3,
+      "question": "Препарат, применяемый при гипертонической болезни, отеках и ХСН, вызывающий гипонатриемию и гипокалиемию:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "спиронолактон",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "резерпин",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "дигоксин",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "гидрохлортиазид",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "эналаприл",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 4,
+      "question": "Механизм действия сердечных гликозидов:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "активация аденилатциклазы, накопление цАМФ",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "сенситизация миокарда к Са2+",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "активация β1-адренорецепторов сердца",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "блокада Na-K-АТФ-азы, увеличение содержания Са2+ в миокарде",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "блокада фосфодиэстеразы, накопление цАМФ",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 5,
+      "question": "Препарат, применяемый для лечения острой сердечной недостаточности:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "метопролол",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "эналаприл",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "левосимендан",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "атропин",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "норэпинефрин",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 6,
+      "question": "Все перечисленные причины кумуляции сердечных гликозидов верны, за исключением:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "связь с белками плазмы крови",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "реабсорбция в почках",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "угнетение микросомальных ферментов печени",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "гепатоэнтеральная циркуляция",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 7,
+      "question": "Основные эффекты сердечных гликозидов:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "усиление и удлинение систолы",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "рефлекторная и прямая активация блуждающих нервов, брадикардия",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "тахикардия вследствие прямого действия на миокард",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "усиление и укорочение систолы",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "усиление диуреза вследствие косвенного (непрямого) действия на почки.",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 8,
+      "question": "Основные признаки интоксикации сердечными гликозидами:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "гипокальциемия и гиперкалиемия",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "гиперкальциемия и гипокалиемия",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "тошнота, рвота",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "аритмии, нарушения проводимости миокарда",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "гипертензия",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 9,
+      "question": "Препараты для лечения гликозидной интоксикации:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "пропранолол",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "фуросемид",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "калия хлорид",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "унитиол (димеркаптопропансульфонат натрия)",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "атропин",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 10,
+      "question": "Препараты, обладающие кардиотоническим эффектом:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "бисопролол",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "левосимендан",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "эналаприл",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "добутамин",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "дигоксин",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 11,
+      "question": "Для лечения ОСН могут применяться:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "добутамин",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "бисопролол",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "левосимендан",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "эналаприл",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "периндоприл",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    }
+  ]
+}

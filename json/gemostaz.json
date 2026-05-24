@@ -1,0 +1,816 @@
+{
+  "title": "Гемостаз",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Механизм действия стрептокиназы заключается:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "в стимуляции активаторов плазмина",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "в протеолитическом действии на фибрин",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "в торможении синтеза II, VI, IX, X факторов свертывания крови",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "в активации факторов свертывания крови",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 2,
+      "question": "Антидотом при передозировке варфарина является:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "тромбин",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "фибриноген",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "протамина сульфат",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "кальция хлорид",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "фитоменадион",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 3,
+      "question": "Антидотом при передозировке гепарина является:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "фибриноген",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "протамина сульфат",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "менадиона натрия бисульфат",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "аминокапроновая кислота",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "фраксипарин",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 4,
+      "question": "Препарат, применяемый при фибринолитических кровотечениях, остром панкреатите, острой ожоговой токсемии:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "менадиона натрия бисульфат",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "фибриноген",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "апротинин",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "протамина сульфат",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "алтеплаза",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 5,
+      "question": "Лекарственный препарат, блокирующий факторы свертывания крови, активность его устанавливается биологическим путем:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "гепарин",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "алтеплаза",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "менадиона натрия бисульфат",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "тромбин",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "апротинин",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 6,
+      "question": "Механизм действия аминокапроновой кислоты заключается:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "в блокаде всех протеолитических ферментов, в том числе плазмина",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "в торможении перехода плазминогена в плазмин",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "в стимуляции активаторов плазмина",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 7,
+      "question": "Препарат, применяемый местно при капиллярных кровотечениях (нельзя вводить внутривенно):",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "фибриноген",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "менадиона натрия бисульфат",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "тромбин",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "адроксон",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "дабигатран",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 8,
+      "question": "Для профилактики тромбозов применяются:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "ингибиторы фибринолиза",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "препараты тромбина",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "антиагреганты",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "фибриноген",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "фибринолитики",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 9,
+      "question": "Все указанное про препарат Ривароксабан верно, за исключением:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "применяется перорально",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "эффект не зависит от возраста и пола",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "тормозит Xa фактор свертывания крови",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "применяется для профилактики тромбозов",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "применяется только инъекционно",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 10,
+      "question": "Механизм действия апротинина:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "торможение протеолитических ферментов",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "прямая активация плазминогена",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "торможение синтеза II, VI, IX, X факторов свертывания крови",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "активация факторов свертывания крови",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "антиагрегационное действие",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 11,
+      "question": "Препарат, относящийся к НПВС, который широко применяется для профилактики тромбозов:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "диклофенак",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "ацетилсалициловая кислота",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "индометацин",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "целекоксиб",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "мелоксикам",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 12,
+      "question": "Механизм действия препарата Ривароксабан:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "стимуляция активаторов плазмина",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "протеолитическое действие на фибрин",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "торможение Xa фактора свертывания крови",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "активация факторов свертывания крови",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "антиагрегационное действие",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 13,
+      "question": "Механизм действия алтеплазы:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "прямая активация плазминогена",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "торможение синтеза II, VI, IX, X факторов свертывания крови",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "активация факторов свертывания крови",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "antiагрегационное действие",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "торможение протеолитических ферментов",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 14,
+      "question": "Средства для профилактики тромбозов:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "аминокапроновая кислота",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "варфарин",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "ацетилсалициловая кислота",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "ривароксабан",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "стрептокиназа",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 15,
+      "question": "Показания к применению аминокапроновой кислоты:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "профилактика тромбозов",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "профилактика кровотечений при операциях на желудке",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "борьба с легочными кровотечениями",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "тромбоэмболия легочной артерии",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 16,
+      "question": "Тромболитические средства:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "фраксипарин",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "алтеплаза",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "сулодексид",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "стрептокиназа",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "клопидогрель",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 17,
+      "question": "Средства, применяемые для остановки кровотечений при проникающих ранениях бывают на основе:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "хитозана",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "протамина сульфата",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "каолина",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "фитоменадиона",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 18,
+      "question": "Прямые антикоагулянты:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "ацетилсалициловая кислота",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "варфарин",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "алтеплаза",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "ривароксабан",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "дабигатран",
+          "correct": true
+        },
+        {
+          "id": 6,
+          "text": "клопидогрель",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 19,
+      "question": "Непрямые антикоагулянты:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "ацетилсалициловая кислота",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "варфарин",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "алтеплаза",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "ривароксабан",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "дабигатран",
+          "correct": false
+        },
+        {
+          "id": 6,
+          "text": "клопидогрель",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 20,
+      "question": "Антиагреганты:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "ацетилсалициловая кислота",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "варфарин",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "алтеплаза",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "ривароксабан",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "дабигатран",
+          "correct": false
+        },
+        {
+          "id": 6,
+          "text": "клопидогрель",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 21,
+      "question": "Фибринолитики (тромболитики):",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "ацетилсалициловая кислота",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "варфарин",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "алтеплаза",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "ривароксабан",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "дабигатран",
+          "correct": false
+        },
+        {
+          "id": 6,
+          "text": "клопидогрель",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 22,
+      "question": "Коагулянты непрямого действия:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "менадиона натрия бисульфат",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "апротинин",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "фитоменадион",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "тромбин",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "аминокапроновая кислота",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 23,
+      "question": "Ингибиторы фибринолиза:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "менадиона натрия бисульфат",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "апротинин",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "фитоменадион",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "тромбин",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "аминокапроновая кислота",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 24,
+      "question": "Прямые коагулянты:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "менадиона натрия бисульфат",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "апротинин",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "фитоменадион",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "тромбин",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "аминокапроновая кислота",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    }
+  ]
+}

@@ -1,0 +1,1020 @@
+{
+  "title": "Противоопухолевые",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Малотоксичный, современный препарат, применяемый при лимфомах и ревматоидном артрите:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "третиноин",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "метотрексат",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "капецитабин",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "ритуксимаб",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "тамоксифен",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 2,
+      "question": "Основное показание к применению ингибитора контрольной точки иммунитета PD-1 пембролизумаба:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "рак молочной железы",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "рак желудка",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "опухоли головного мозга",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "меланома",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "рак предстательной железы",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 3,
+      "question": "Препарат, способствующий дифференцировке лейкозных клеток:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "третиноин",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "метотрексат",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "капецитабин",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "ритуксимаб",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "тамоксифен",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 4,
+      "question": "Препарат, избирательно тормозящий синтез белка в лейкозных клетках:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "циклофосфан",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "аспарагиназа",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "анастрозол",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "метотрексат",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "третиноин",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 5,
+      "question": "Цитостатик, назначаемый при ревматоидном артрите в качестве иммунодепрессанта:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "метотрексат",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "тамоксифен",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "капецитабин",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "аспарагиназа",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "третиноин",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 6,
+      "question": "Цитостатик растительного происхождения, нарушающий митоз клеток, применяемый при раке кожи:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "метотрексат",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "циклофосфан",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "колхамин",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "тамоксифен",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "доксорубицин",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 7,
+      "question": "Препарат, блокирующий эстрогеновые рецепторы в периферических тканях:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "метотрексат",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "циклофосфан",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "колхамин",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "винбластин",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "тамоксифен",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 8,
+      "question": "Антиметаболит, нарушающий активацию фолиевой кислоты:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "метотрексат",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "циклофосфан",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "колхамин",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "винбластин",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "тамоксифен",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 9,
+      "question": "Преднизолон назначают при:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "раке горла",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "раке предстательной железы",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "раке молочной железы",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "остром лимфобластном лейкозе",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 10,
+      "question": "Препарат, применяемый при раке молочной железы с экспрессией HER-2:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "третиноин",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "метотрексат",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "капецитабин",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "трастузумаб",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "тамоксифен",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 11,
+      "question": "Иматиниб, специфический ингибитор тирозинкиназы, относится к:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "алкилирующим средствам",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "антагонистам эстрогенов",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "антагонистам андрогенов",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "антиметаболитам",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "таргетным препаратам",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 12,
+      "question": "Цитостатик, являющийся пролекарством, активирующимся преимущественно в опухолевых клетках, малотоксичный:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "меркаптопурин",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "метотрексат",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "капецитабин",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "флутамид",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "тамоксифен",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 13,
+      "question": "Ингибитор контрольных точек иммунитета, повышающий активность иммунной системы в борьбе с опухолью:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "ипилимумаб",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "метотрексат",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "капецитабин",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "ритуксимаб",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "тамоксифен",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 14,
+      "question": "Побочные эффекты иммунотерапевтических препаратов, ингибиторов контрольных точек иммунитета:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "нарушение кроветворения, половых функций",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "нефро- и ототоксичность",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "аутоиммунные реакции",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "нейротоксичность, судороги",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "присоединение инфекций",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 15,
+      "question": "Побочные эффекты цитостатиков включают все перечисленные, кроме:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "нарушение кроветворения, половых функций",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "тератогенность",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "канцерогенность",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "аутоиммунные реакции",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "присоединение инфекций",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 16,
+      "question": "Все перечисленные препараты относятся к иммунотерапевтическим, кроме:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "ипилимумаб",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "пембролизумаб",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "капецитабин",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "интерферон альфа",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "интерлейкин",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 17,
+      "question": "Все перечисленные препараты обладают иммунодепрессивным действием, кроме:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "винбластин",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "метотрексат",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "колхамин",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "тамоксифен",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "доксорубицин",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 18,
+      "question": "К цитостатикам относятся:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "доксорубицин",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "циклофосфамид",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "тамоксифен",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "метотрексат",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "флутамид",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 19,
+      "question": "Механизм действия винкристина:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "алкилирование нуклеофильных центров нуклеиновых кислот",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "конкуренция с пиримидиновыми основаниями нуклеиновых кислот",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "блокада фолатредуктазы",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "нарушение митоза",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "блокада эстрогеновых рецепторов",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 20,
+      "question": "Механизм действия метотрексата:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "алкилирование нуклеофильных центров нуклеиновых кислот",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "конкуренция с пиримидиновыми основаниями нуклеиновых кислот",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "блокада фолатредуктазы",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "нарушение митоза",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "блокада эстрогеновых рецепторов",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 21,
+      "question": "Механизм действия циклофосфамида:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "алкилирование нуклеофильных центров нуклеиновых кислот",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "конкуренция с пиримидиновыми основаниями нуклеиновых кислот",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "блокада фолатредуктазы",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "нарушение митоза",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "блокада эстрогеновых рецепторов",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 22,
+      "question": "Механизм действия цисплатина:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "алкилирование нуклеофильных центров нуклеиновых кислот",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "конкуренция с пиримидиновыми основаниями нуклеиновых кислот",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "блокада фолатредуктазы",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "нарушение митоза",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "блокада эстрогеновых рецепторов",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 23,
+      "question": "Механизм действия тамоксифена:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "алкилирование нуклеофильных центров нуклеиновых кислот",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "конкуренция с пиримидиновыми основаниями нуклеиновых кислот",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "блокада фолатредуктазы",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "нарушение митоза",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "блокада эстрогеновых рецепторов",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 24,
+      "question": "Механизм действия фторурацила:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "алкилирование нуклеофильных центров нуклеиновых кислот",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "конкуренция с пиримидиновыми основаниями нуклеиновых кислот",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "блокада фолатредуктазы",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "нарушение митоза",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "блокада эстрогеновых рецепторов",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 25,
+      "question": "Механизм действия трастузумаба:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "ингибитор контрольной точки иммунитета",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "антиметаболит-пролекарство",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "блокатор андрогеновых рецепторов",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "блокатор фактора роста опухоли HER2",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "блокатор фактора роста опухоли CD20",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 26,
+      "question": "Механизм действия флутамида:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "ингибитор контрольной точки иммунитета",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "антиметаболит-пролекарство",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "блокатор андрогеновых рецепторов",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "блокатор фактора роста опухоли HER2",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "блокатор фактора роста опухоли CD20",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 27,
+      "question": "Механизм действия ритуксимаба:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "ингибитор контрольной точки иммунитета",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "antiметаболит-пролекарство",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "блокатор андрогеновых рецепторов",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "блокатор фактора роста опухоли HER2",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "блокатор фактора роста опухоли CD20",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 28,
+      "question": "Механизм действия капецитабина:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "ингибитор контрольной точки иммунитета",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "антиметаболит-пролекарство",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "блокатор андрогеновых рецепторов",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "блокатор фактора роста опухоли HER2",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "блокатор фактора роста опухоли CD20",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 29,
+      "question": "Механизм действия ипилимумаба:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "ингибитор контрольной точки иммунитета",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "антиметаболит-пролекарство",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "блокатор андрогеновых рецепторов",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "блокатор фактора роста опухоли HER2",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "блокатор фактора роста опухоли CD20",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 30,
+      "question": "Механизм действия пембролизумаба:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "ингибитор контрольной точки иммунитета",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "антиметаболит-пролекарство",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "блокатор андрогеновых рецепторов",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "блокатор фактора роста опухоли HER2",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "блокатор фактора роста опухоли CD20",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    }
+  ]
+}

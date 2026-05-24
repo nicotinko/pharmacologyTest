@@ -1,0 +1,563 @@
+{
+  "title": "Дыхание",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Препараты, относящиеся к базисной терапии бронхиальной астмы:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "ипратропия бромид",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "бромгексин",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "монтелукаст",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "метилурацил",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "беклометазон",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 2,
+      "question": "Эффекты, характерные для преноксдиазина:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "угнетает кашлевой центр",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "обладает противовоспалительной и спазмолитической активностью",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "снижает возбудимость чувствительных рецепторов слизистой бронхов",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "угнетает дыхательный центр",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "вызывает привыкание и лекарственную зависимость",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 3,
+      "question": "Для кодеина характерно следующее:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "угнетает кашлевой центр",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "угнетает дыхательный центр",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "угнетает сосудодвигательный центр",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "оказывает анестезирующее действие на бронхи",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "обладает анальгетическим эффектом",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 4,
+      "question": "Показания к налоксону:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "передозировка бензодиазепинами",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "рефлекторная остановка дыхания",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "передозировка героином",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "угнетение дыхательного центра, вызванное морфином",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 5,
+      "question": "Препараты, применяемые при отеке легких:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "спиронолактон",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "фуросемид",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "бромгексин",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "добутамин",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "преднизолон",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 6,
+      "question": "Препараты, применяемые при нарушениях дыхания вследствие недостатка сурфактанта:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "берактант",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "кетотифен",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "порактант альфа",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "аминофиллин",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "колфосцерила пальмитат",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 7,
+      "question": "Препараты, усиливающие секрецию мокроты и вызывающие ее деполимеризацию:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "йодид калия",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "ацетилцистеин",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "кетотифен",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "амброксол",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "бромгексин",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 8,
+      "question": "Несистемные глюкокортикоиды, используемые ингаляционно для терапии бронхиальной астмы:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "индакатерол",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "беклометазон дипропионат",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "дексаметазон",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "фенотерол",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "флутиказона пропионат",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 9,
+      "question": "К короткодействующим β₂-адреномиметикам, используемым для купирования приступа бронхиальной астмы, относятся:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "сальбутамол",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "формотерол",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "фенотерол",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "сальметерол",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "ипратропия бромид",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 10,
+      "question": "Ненаркотические противокашлевые препараты центрального действия:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "кодеин",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "глауцин",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "бутамират",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "преноксдиазин",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "окселадин",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 11,
+      "question": "Бронхолитик, обладающий слабым диуретическим эффектом, расширяющий сосуды мозга, сердца, почек:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "фенотерол",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "кетотифен",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "эфедрин",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "аминофиллин",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "ипратропия бромид",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 12,
+      "question": "Отхаркивающий препарат рефлекторного действия:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "йодид калия",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "гидрокарбонат натрия",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "ацетилцистеин",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "бромгексин",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "экстракт термопсиса",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 13,
+      "question": "М-холинолитический препарат, применяемый ингаляционно для лечения бронхиальной астмы –",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "метоциния йодид",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "кромогликат натрия",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "атропина сульфат",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "ипратропия бромид",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "фенотерол",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 14,
+      "question": "Препарат, используемый при тяжелых обострениях бронхиальной астмы, подавляющий все фазы воспаления, оказывающий иммунодепрессивное действие:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "аминофиллин",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "сальбутамол",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "кислота кромоглициевая",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "кетотифен",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "дексаметазон",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 15,
+      "question": "Механизм действия аминофиллина:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "активация β₂-адренорецепторов",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "блокада аденозиновых рецепторов бронхов",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "стабилизация мембран тучных клеток",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "блокада фосфодиэстеразы гладких мышц",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 16,
+      "question": "Механизм действия кромоглициевой кислоты:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "активация β₂-адренорецепторов",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "блокада аденозиновых рецепторов бронхов",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "стабилизация мембран тучных клеток",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "блокада фосфодиэстеразы гладких мышц",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 17,
+      "question": "Механизм действия фенотерола:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "активация β₂-адренорецепторов",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "блокада аденозиновых рецепторов бронхов",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "стабилизация мембран тучных клеток",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "блокада фосфодиэстеразы гладких мышц",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    }
+  ]
+}
