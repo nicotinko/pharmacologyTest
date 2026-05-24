@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Антибиотики. Основные понятия. Бета-лактамы и макролиды</title>
+    <title>Анксиолитики. Снотворные. Противосудорожные</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -152,11 +152,34 @@
             background-color: #ffe6e6;
             border-color: #e6a3a3;
         }
+        .navigation-block {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+            padding: 10px 0;
+            border-top: 1px solid #eee;
+        }
+        .navigation-link {
+            color: #0056b3;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.2s ease;
+        }
+        .navigation-link:hover {
+            background-color: #eaf2f8;
+        }
+        .navigation-link.disabled {
+            color: #ccc;
+            pointer-events: none;
+            cursor: default;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Антибиотики. Основные понятия. Бета-лактамы и макролиды</h1>
+        <h1>Анксиолитики. Снотворные. Противосудорожные</h1>
         <form id="quizForm">
             <!-- Questions will be rendered here by JavaScript -->
         </form>
@@ -167,41 +190,47 @@
         <div id="results" class="results-block">
             Ваш результат: <span id="score">0</span> из <span id="totalQuestions">0</span> (<span id="percentage">0</span>%)
         </div>
+
+        <div class="navigation-block">
+            <a href="anestetiki_spirty.html" class="navigation-link">Предыдущий тест</a>
+            <a href="../index.html" class="navigation-link">Все тесты</a>
+            <a href="antianginalnye.html" class="navigation-link">Следующий тест</a>
+        </div>
     </div>
 
     <script>
         const quizData = {
-  "title": "Антибиотики. Основные понятия. Бета-лактамы и макролиды",
+  "title": "Анксиолитики. Снотворные. Противосудорожные",
   "questions": [
     {
       "id": 1,
-      "question": "К основным принципам химиотерапии относятся:",
+      "question": "Эффекты, типичные для диазепама:",
       "multi": true,
       "explanation": "",
       "options": [
         {
           "id": 1,
-          "text": "выбор оптимального антибиотика с учетом вида возбудителя и спектра действия препарата",
-          "correct": true
+          "text": "противорвотный",
+          "correct": false
         },
         {
           "id": 2,
-          "text": "назначение минимально эффективных доз антибиотика с целью снижения токсичности препарата",
-          "correct": false
-        },
-        {
-          "id": 3,
-          "text": "назначение достаточно высоких доз препаратов для достижения бактерицидных или бактериостатических концентраций",
+          "text": "седативный",
           "correct": true
         },
         {
-          "id": 4,
-          "text": "прекращение терапии при достижении клинического улучшения",
+          "id": 3,
+          "text": "аналептический",
           "correct": false
         },
         {
+          "id": 4,
+          "text": "миорелаксирующий",
+          "correct": true
+        },
+        {
           "id": 5,
-          "text": "соблюдение оптимальной длительности курса терапии",
+          "text": "противотревожный",
           "correct": true
         }
       ],
@@ -209,43 +238,33 @@
     },
     {
       "id": 2,
-      "question": "К антибиотикам широкого спектра действия относятся:",
+      "question": "Механизмы действия анксиолитиков:",
       "multi": true,
       "explanation": "",
       "options": [
         {
           "id": 1,
-          "text": "биосинтетические пенициллины",
+          "text": "блокада Д2-рецепторов мезолимбической области",
           "correct": false
         },
         {
           "id": 2,
-          "text": "цефалоспорины",
+          "text": "образование комплекса с субъединицей ГАМК-рецептора с повышением его аффинности к медиатору",
           "correct": true
         },
         {
           "id": 3,
-          "text": "аминогликозиды",
-          "correct": true
+          "text": "блокада аденозиновых рецепторов",
+          "correct": false
         },
         {
           "id": 4,
-          "text": "биосинтетические макролиды",
-          "correct": false
-        },
-        {
-          "id": 5,
-          "text": "тетрациклины",
+          "text": "влияние на серотониновые рецепторы",
           "correct": true
         },
         {
-          "id": 6,
-          "text": "рифампицины",
-          "correct": false
-        },
-        {
-          "id": 7,
-          "text": "polyмиксины",
+          "id": 5,
+          "text": "активация α-адренорецепторов ретикулярной формации",
           "correct": false
         }
       ],
@@ -253,208 +272,193 @@
     },
     {
       "id": 3,
-      "question": "К β-лактамным антибиотикам относятся:",
+      "question": "Показания к применению диазепама:",
       "multi": true,
       "explanation": "",
       "options": [
         {
           "id": 1,
-          "text": "ванкомицин",
-          "correct": false
-        },
-        {
-          "id": 2,
-          "text": "азтреонам",
+          "text": "тревожное расстройство",
           "correct": true
         },
         {
+          "id": 2,
+          "text": "депрессия с вялостью и заторможенностью",
+          "correct": false
+        },
+        {
           "id": 3,
-          "text": "ампициллин",
+          "text": "эпилептический статус",
           "correct": true
         },
         {
           "id": 4,
-          "text": "цефалексин",
+          "text": "премедикация перед операцией",
           "correct": true
         },
         {
           "id": 5,
-          "text": "азитромицин",
+          "text": "психозы различной этиологии",
           "correct": false
-        },
-        {
-          "id": 6,
-          "text": "меропенем",
-          "correct": true
         }
       ],
       "fill_in_blanks": []
     },
     {
       "id": 4,
-      "question": "Антибиотики, которые действуют на стафилококков, продуцирующих пенициллиназу:",
+      "question": "Побочные эффекты диазепама:",
       "multi": true,
       "explanation": "",
       "options": [
         {
           "id": 1,
-          "text": "ампициллин",
+          "text": "экстрапирамидные нарушения",
           "correct": false
         },
         {
           "id": 2,
-          "text": "оксациллин",
+          "text": "амнестические нарушения",
           "correct": true
         },
         {
           "id": 3,
-          "text": "меропенем",
+          "text": "дневная сонливость",
           "correct": true
         },
         {
           "id": 4,
-          "text": "ванкомицин",
+          "text": "лекарственная зависимость",
           "correct": true
+        },
+        {
+          "id": 5,
+          "text": "ортостатическая гипотензия",
+          "correct": false
         }
       ],
       "fill_in_blanks": []
     },
     {
       "id": 5,
-      "question": "К ингибиторам β-лактамаз относятся:",
+      "question": "К «дневным» транквилизаторам относятся:",
       "multi": true,
       "explanation": "",
       "options": [
         {
           "id": 1,
-          "text": "салициловая кислота",
-          "correct": false
+          "text": "тофизопам",
+          "correct": true
         },
         {
           "id": 2,
-          "text": "клавулановая кислота",
-          "correct": true
+          "text": "нитразепам",
+          "correct": false
         },
         {
           "id": 3,
-          "text": "сульбактам",
-          "correct": true
+          "text": "золпидем",
+          "correct": false
         },
         {
           "id": 4,
-          "text": "циластатин",
+          "text": "диазепам",
           "correct": false
+        },
+        {
+          "id": 5,
+          "text": "медазепам",
+          "correct": true
         }
       ],
       "fill_in_blanks": []
     },
     {
       "id": 6,
-      "question": "Препараты, действующие на синегнойную палочку:",
-      "multi": true,
+      "question": "Отличительной особенностью «дневных» транквилизаторов является:",
+      "multi": false,
       "explanation": "",
       "options": [
         {
           "id": 1,
-          "text": "амоксициллин",
+          "text": "отсутствие противотревожного эффекта",
           "correct": false
         },
         {
           "id": 2,
-          "text": "азтреонам",
+          "text": "минимально выраженный седативный и миорелаксирующий эффекты",
           "correct": true
         },
         {
           "id": 3,
-          "text": "оксациллин",
+          "text": "отсутствие риска развития лекарственной зависимости",
           "correct": false
         },
         {
           "id": 4,
-          "text": "цефоперазон",
-          "correct": true
-        },
-        {
-          "id": 5,
-          "text": "полимиксин B",
-          "correct": true
+          "text": "высокая противосудорожная активность",
+          "correct": false
         }
       ],
       "fill_in_blanks": []
     },
     {
       "id": 7,
-      "question": "Нарушение синтеза клеточной стенки микробов характерно для следующих групп антибиотиков:",
-      "multi": true,
+      "question": "Механизм действия тофизопама:",
+      "multi": false,
       "explanation": "",
       "options": [
         {
           "id": 1,
-          "text": "лактамные антибиотики",
-          "correct": true
-        },
-        {
-          "id": 2,
-          "text": "рифампицины",
+          "text": "аллостерический модулятор ГАМК-А рецепторов",
           "correct": false
         },
         {
+          "id": 2,
+          "text": "избирательный ингибитор фосфодиэстеразы (ФДЭ-4 и ФДЭ-10)",
+          "correct": true
+        },
+        {
           "id": 3,
-          "text": "макролиды",
+          "text": "агонист 5-HT1A серотониновых рецепторов",
           "correct": false
         },
         {
           "id": 4,
-          "text": "аминогликозиды",
+          "text": "блокада H1-гистаминовых рецепторов",
           "correct": false
-        },
-        {
-          "id": 5,
-          "text": "ристамицин",
-          "correct": true
         }
       ],
       "fill_in_blanks": []
     },
     {
       "id": 8,
-      "question": "Препараты, входящие в группу макролидов:",
+      "question": "Анксиолитик, являющийся селективным агонистом серотониновых 5-HT1A-рецепторов, не вызывающий миорелаксации и лекарственной зависимости:",
       "multi": false,
       "explanation": "",
       "options": [
         {
           "id": 1,
-          "text": "азитромицин",
-          "correct": true
-        },
-        {
-          "id": 2,
-          "text": "ампициллин",
+          "text": "диазепам",
           "correct": false
         },
         {
+          "id": 2,
+          "text": "буспирон",
+          "correct": true
+        },
+        {
           "id": 3,
-          "text": "гентамицин",
+          "text": "тофизопам",
           "correct": false
         },
         {
           "id": 4,
-          "text": "ванкомицин",
+          "text": "гидроксизин",
           "correct": false
         },
         {
           "id": 5,
-          "text": "доксициклин",
-          "correct": false
-        },
-        {
-          "id": 6,
-          "text": "имипенем",
-          "correct": false
-        },
-        {
-          "id": 7,
-          "text": "амикацин",
+          "text": "фабомотизол",
           "correct": false
         }
       ],
@@ -462,87 +466,67 @@
     },
     {
       "id": 9,
-      "question": "Препараты, входящие в группу пенициллинов:",
-      "multi": false,
+      "question": "К небензодиазепиновым анксиолитикам относятся:",
+      "multi": true,
       "explanation": "",
       "options": [
         {
           "id": 1,
-          "text": "азитромицин",
-          "correct": false
-        },
-        {
-          "id": 2,
-          "text": "ампициллин",
+          "text": "фабомотизол",
           "correct": true
         },
         {
-          "id": 3,
-          "text": "гентамицин",
+          "id": 2,
+          "text": "бромдигидрохлорфенилбензодиазепин",
           "correct": false
         },
         {
+          "id": 3,
+          "text": "гидроксизин",
+          "correct": true
+        },
+        {
           "id": 4,
-          "text": "ванкомицин",
+          "text": "тофизопам",
           "correct": false
         },
         {
           "id": 5,
-          "text": "доксициклин",
-          "correct": false
-        },
-        {
-          "id": 6,
-          "text": "имипенем",
-          "correct": false
-        },
-        {
-          "id": 7,
-          "text": "амикацин",
-          "correct": false
+          "text": "буспирон",
+          "correct": true
         }
       ],
       "fill_in_blanks": []
     },
     {
       "id": 10,
-      "question": "Препараты, входящие в группу карбапенемов:",
-      "multi": false,
+      "question": "Препараты бензодиазепинового ряда, применяемые как снотворные:",
+      "multi": true,
       "explanation": "",
       "options": [
         {
           "id": 1,
-          "text": "азитромицин",
-          "correct": false
+          "text": "нитразепам",
+          "correct": true
         },
         {
           "id": 2,
-          "text": "ампициллин",
+          "text": "золпидем",
           "correct": false
         },
         {
           "id": 3,
-          "text": "гентамицин",
-          "correct": false
+          "text": "флунитразепам",
+          "correct": true
         },
         {
           "id": 4,
-          "text": "ванкомицин",
+          "text": "доксиламин",
           "correct": false
         },
         {
           "id": 5,
-          "text": "доксициклин",
-          "correct": false
-        },
-        {
-          "id": 6,
-          "text": "имипенем",
-          "correct": true
-        },
-        {
-          "id": 7,
-          "text": "амикацин",
+          "text": "зопиклон",
           "correct": false
         }
       ],
@@ -550,78 +534,451 @@
     },
     {
       "id": 11,
-      "question": "Бактериостатическое действие оказывают следующие группы антибиотиков:",
+      "question": "Z-препараты (небензодиазепиновые агонисты бензодиазепиновых рецепторов):",
       "multi": true,
       "explanation": "",
       "options": [
         {
           "id": 1,
-          "text": "тетрациклины",
+          "text": "золпидем",
           "correct": true
         },
         {
           "id": 2,
-          "text": "бета-лактамные антибиотики",
-          "correct": false
+          "text": "зопиклон",
+          "correct": true
         },
         {
           "id": 3,
-          "text": "аминогликозиды",
-          "correct": false
+          "text": "залеплон",
+          "correct": true
         },
         {
           "id": 4,
-          "text": "полимиксины",
+          "text": "доксиламин",
           "correct": false
         },
         {
           "id": 5,
-          "text": "амфениколы",
-          "correct": true
-        },
-        {
-          "id": 6,
-          "text": "линкозамиды",
-          "correct": true
+          "text": "мелатонин",
+          "correct": false
         }
       ],
       "fill_in_blanks": []
     },
     {
       "id": 12,
-      "question": "Бактериицидное действие оказывают следующие группы антибиотиков:",
+      "question": "Блокатор H1-гистаминовых рецепторов, разрешенный к применению в качестве снотворного во время беременности:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "золпидем",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "фенобарбитал",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "нитразепам",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "доксиламин",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "мелатонин",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 13,
+      "question": "Снотворные средства, являющиеся агонистами мелатониновых рецепторов:",
       "multi": true,
       "explanation": "",
       "options": [
         {
           "id": 1,
-          "text": "тетрациклины",
-          "correct": false
+          "text": "рамелтеон",
+          "correct": true
         },
         {
           "id": 2,
-          "text": "лактамные антибиотики",
+          "text": "мелатонин",
           "correct": true
         },
         {
           "id": 3,
-          "text": "аминогликозиды",
+          "text": "золпидем",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "доксиламин",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 14,
+      "question": "Побочные эффекты, характерные для бензодиазепиновых снотворных средств:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "феномен «отдачи»",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "постсомнические нарушения (сонливость, вялость на следующий день)",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "кумуляция при повторном применении",
           "correct": true
         },
         {
           "id": 4,
-          "text": "полимиксины",
+          "text": "высокая терапевтическая широта",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "развитие лекарственной зависимости при длительном применении",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 15,
+      "question": "Достоинства Z-препаратов по сравнению с бензодиазепинами:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "меньшая терапевтическая широта",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "в меньшей степени нарушают структуру сна",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "менее выраженное последействие (дневная сонливость)",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "меньший риск развития привыкания и зависимости при краткосрочном курсе",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 16,
+      "question": "Препараты для профилактики больших судорожных припадков (grand mal):",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "карбамазепин",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "этосуксимид",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "вальпроевая кислота",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "фенитоин",
           "correct": true
         },
         {
           "id": 5,
-          "text": "амфениколы",
+          "text": "диазепам",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 17,
+      "question": "Механизм действия этосуксимида:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "Активация ГАМК-трансаминазы",
           "correct": false
         },
         {
-          "id": 6,
-          "text": "линкозамиды",
+          "id": 2,
+          "text": "Блокада натриевых каналов мембран нейронов",
           "correct": false
+        },
+        {
+          "id": 3,
+          "text": "Блокада кальциевых каналов Т-типа в нейронах таламуса",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "Блокада глутаматных AMPA-рецепторов",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 18,
+      "question": "Механизм действия карбамазепина:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "увеличивает ГАМК-ергическое торможение",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "блокирует кальциевые каналы Т-типа",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "эффективен только при малых припадках",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "эффективен при больших судорожных и парциальных припадках",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "блокирует натриевые каналы нейрональных мембран и тормозит выделение глутамата",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 19,
+      "question": "Препарат для терапии судорог любой этиологии и эпилептического статуса:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "вальпроевая кислота",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "диазепам",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "этосуксимид",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "ламотриджин",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "карбамазепин",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 20,
+      "question": "Препарат для профилактики малых припадков при эпилепсии:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "хлорпромазин",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "этосуксимид",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "фенобарбитал",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "амитриптилин",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "лития карбонат",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 21,
+      "question": "К антагонистам глутаматных рецепторов относится:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "перампанел",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "габапентин",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "фенитоин",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "леветирацетам",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 22,
+      "question": "Уменьшают глутаматергические влияния все перечисленные препараты, кроме:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "фелбамат",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "перампанел",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "диазепам",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "леветирацетам",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 23,
+      "question": "Механизмы действия, типичные для противоэпилептических средств:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "блокада натриевых каналов нейрональных мембран",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "блокада ГАМК-рецепторов",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "стимуляция глутаматергической системы",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "блокада кальциевых каналов Т-типа",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "активация ГАМК-системы",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 24,
+      "question": "Побочные эффекты, возникающие при длительном применении фенитоина:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "тахикардия",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "диплопия, атаксия",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "гиперплазия десен",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "мегалобластная анемия",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "гирсутизм",
+          "correct": true
         }
       ],
       "fill_in_blanks": []

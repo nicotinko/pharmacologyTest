@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Противовирусные</title>
+    <title>Антибиотики. Часть 2</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -152,11 +152,34 @@
             background-color: #ffe6e6;
             border-color: #e6a3a3;
         }
+        .navigation-block {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+            padding: 10px 0;
+            border-top: 1px solid #eee;
+        }
+        .navigation-link {
+            color: #0056b3;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.2s ease;
+        }
+        .navigation-link:hover {
+            background-color: #eaf2f8;
+        }
+        .navigation-link.disabled {
+            color: #ccc;
+            pointer-events: none;
+            cursor: default;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Противовирусные</h1>
+        <h1>Антибиотики. Часть 2</h1>
         <form id="quizForm">
             <!-- Questions will be rendered here by JavaScript -->
         </form>
@@ -167,75 +190,86 @@
         <div id="results" class="results-block">
             Ваш результат: <span id="score">0</span> из <span id="totalQuestions">0</span> (<span id="percentage">0</span>%)
         </div>
+
+        <div class="navigation-block">
+            <a href="antibiotiki_osnovnye_ponyatiya_beta_laktamy_i_makrolidy.html" class="navigation-link">Предыдущий тест</a>
+            <a href="../index.html" class="navigation-link">Все тесты</a>
+            <a href="antigelmintnye.html" class="navigation-link">Следующий тест</a>
+        </div>
     </div>
 
     <script>
         const quizData = {
-  "title": "Противовирусные",
+  "title": "Антибиотики. Часть 2",
   "questions": [
     {
       "id": 1,
-      "question": "Препараты, угнетающие синтез нуклеиновых кислот вирусов:",
+      "question": "К антибиотикам узкого грамположительного спектра действия относятся:",
       "multi": true,
       "explanation": "",
       "options": [
         {
           "id": 1,
-          "text": "софосбувир",
+          "text": "оксациллин",
           "correct": true
         },
         {
           "id": 2,
-          "text": "ацикловир",
-          "correct": true
+          "text": "полимиксин B",
+          "correct": false
         },
         {
           "id": 3,
-          "text": "ламивудин",
-          "correct": true
+          "text": "амоксициллин",
+          "correct": false
         },
         {
           "id": 4,
-          "text": "осельтамивир",
-          "correct": false
+          "text": "линкомицин",
+          "correct": true
         },
         {
           "id": 5,
-          "text": "саквинавир",
+          "text": "цефотаксим",
           "correct": false
+        },
+        {
+          "id": 6,
+          "text": "эритромицин",
+          "correct": true
         }
       ],
       "fill_in_blanks": []
     },
     {
       "id": 2,
-      "question": "Препараты, применяемые для профилактики и лечения гриппа:",
+      "question": "Препараты, противопоказанные женщинам, кормящим грудью:",
       "multi": true,
       "explanation": "",
       "options": [
         {
           "id": 1,
-          "text": "римантадин",
+          "text": "хлорамфеникол",
           "correct": true
         },
         {
           "id": 2,
-          "text": "балоксавир",
-          "correct": true
-        },
-        {
-          "id": 3,
-          "text": "умефеновир",
+          "text": "ампициллин",
           "correct": false
         },
         {
-          "id": 4,
-          "text": "осельтамивир",
+          "id": 3,
+          "text": "тетрациклин",
           "correct": true
         },
         {
+          "id": 4,
+          "text": "эритромицин",
+          "correct": false
+        },
+        {
           "id": 5,
-          "text": "саквинавир",
+          "text": "цефаклор",
           "correct": false
         }
       ],
@@ -243,67 +277,67 @@
     },
     {
       "id": 3,
-      "question": "Препараты, используемые для лечения вирусного гепатита С:",
+      "question": "Антибиотики, обладающие выраженным тератогенным эффектом:",
       "multi": true,
       "explanation": "",
       "options": [
         {
           "id": 1,
-          "text": "осельтамивир",
+          "text": "ампициллин",
           "correct": false
         },
         {
           "id": 2,
-          "text": "римантадин",
-          "correct": false
+          "text": "доксициклин",
+          "correct": true
         },
         {
           "id": 3,
-          "text": "даклатасвир",
+          "text": "хлорамфеникол",
           "correct": true
         },
         {
           "id": 4,
-          "text": "ацикловир",
+          "text": "азитромицин",
           "correct": false
         },
         {
           "id": 5,
-          "text": "софосбувир",
-          "correct": true
+          "text": "полимиксин B",
+          "correct": false
         }
       ],
       "fill_in_blanks": []
     },
     {
       "id": 4,
-      "question": "Препараты, эффективные в отношении вируса иммунодефицита человека (ВИЧ):",
+      "question": "Показания для стрептомицина:",
       "multi": true,
       "explanation": "",
       "options": [
         {
           "id": 1,
-          "text": "даклатасвир",
+          "text": "лейшманиоз",
           "correct": false
         },
         {
           "id": 2,
-          "text": "саквинавир",
+          "text": "чума",
           "correct": true
         },
         {
           "id": 3,
-          "text": "абакавир",
+          "text": "туберкулез",
           "correct": true
         },
         {
           "id": 4,
-          "text": "ламивудин",
+          "text": "туляремия",
           "correct": true
         },
         {
           "id": 5,
-          "text": "осельтамивир",
+          "text": "госпитальная инфекция",
           "correct": false
         }
       ],
@@ -311,67 +345,67 @@
     },
     {
       "id": 5,
-      "question": "Препараты, обладающие интерфероногенной активностью:",
-      "multi": true,
+      "question": "К антибиотикам узкого грамотрицательного спектра действия относятся:",
+      "multi": false,
       "explanation": "",
       "options": [
         {
           "id": 1,
-          "text": "циклоферон",
-          "correct": true
+          "text": "биосинтетические пенициллины",
+          "correct": false
         },
         {
           "id": 2,
-          "text": "римантадин",
+          "text": "аминогликозиды",
           "correct": false
         },
         {
           "id": 3,
-          "text": "метисазон",
+          "text": "карбапенемы",
           "correct": false
         },
         {
           "id": 4,
-          "text": "умефеновир",
-          "correct": true
+          "text": "линкозамиды",
+          "correct": false
         },
         {
           "id": 5,
-          "text": "осельтамивир",
-          "correct": false
+          "text": "полимиксины",
+          "correct": true
         }
       ],
       "fill_in_blanks": []
     },
     {
       "id": 6,
-      "question": "Препарат, применяемый для профилактики и лечения гриппа А и В:",
+      "question": "Антибиотик, обладающий ото- и нефротоксичностью:",
       "multi": false,
       "explanation": "",
       "options": [
         {
           "id": 1,
-          "text": "римантадин",
+          "text": "хлорамфеникол",
           "correct": false
         },
         {
           "id": 2,
-          "text": "метисазон",
+          "text": "ампициллин",
           "correct": false
         },
         {
           "id": 3,
-          "text": "софосбувир",
-          "correct": false
-        },
-        {
-          "id": 4,
-          "text": "осельтамивир",
+          "text": "гентамицин",
           "correct": true
         },
         {
+          "id": 4,
+          "text": "тетрациклин",
+          "correct": false
+        },
+        {
           "id": 5,
-          "text": "саквинавир",
+          "text": "азитромицин",
           "correct": false
         }
       ],
@@ -379,33 +413,33 @@
     },
     {
       "id": 7,
-      "question": "Препарат, используемый для лечения герпетической инфекции:",
+      "question": "Гематотоксичный антибиотик, вызывающий у новорожденных детей «серый» синдром:",
       "multi": false,
       "explanation": "",
       "options": [
         {
           "id": 1,
-          "text": "ламивудин",
-          "correct": false
+          "text": "хлорамфеникол",
+          "correct": true
         },
         {
           "id": 2,
-          "text": "римантадин",
+          "text": "стрептомицин",
           "correct": false
         },
         {
           "id": 3,
-          "text": "саквинавир",
+          "text": "тетрациклин",
           "correct": false
         },
         {
           "id": 4,
-          "text": "ацикловир",
-          "correct": true
+          "text": "полимиксин",
+          "correct": false
         },
         {
           "id": 5,
-          "text": "умефеновир",
+          "text": "цефаклор",
           "correct": false
         }
       ],
@@ -413,67 +447,67 @@
     },
     {
       "id": 8,
-      "question": "Препарат, являющийся производным пептидов, избирательно блокирующий протеазы ВИЧ:",
+      "question": "Антибиотик, нарушающий рост зубов у детей, обладающий антагонизмом с витамином B2:",
       "multi": false,
       "explanation": "",
       "options": [
         {
           "id": 1,
-          "text": "умефеновир",
+          "text": "левомицетин",
           "correct": false
         },
         {
           "id": 2,
-          "text": "ламивудин",
+          "text": "стрептомицин",
           "correct": false
         },
         {
           "id": 3,
-          "text": "софосбувир",
-          "correct": false
+          "text": "тетрациклин",
+          "correct": true
         },
         {
           "id": 4,
-          "text": "рибавирин",
+          "text": "полимиксин",
           "correct": false
         },
         {
           "id": 5,
-          "text": "саквинавир",
-          "correct": true
+          "text": "цефаклор",
+          "correct": false
         }
       ],
       "fill_in_blanks": []
     },
     {
       "id": 9,
-      "question": "Механизм действия ламивудина следующий:",
+      "question": "Все положения, касающиеся линкомицина, правильные, за исключением:",
       "multi": false,
       "explanation": "",
       "options": [
         {
           "id": 1,
-          "text": "угнетает сборку вириона",
+          "text": "обладает бактериостатическим действием",
           "correct": false
         },
         {
           "id": 2,
-          "text": "превращаясь в трифосфат, ингибирует обратную транскриптазу ВИЧ по механизму антиметаболизма",
+          "text": "нарушает синтез микробной стенки",
           "correct": true
         },
         {
           "id": 3,
-          "text": "избирательно ингибирует протеазы ВИЧ и угнетает синтез «поздних» вирусных белков",
+          "text": "действует на стафилококков, продуцирующих пенициллиназу",
           "correct": false
         },
         {
           "id": 4,
-          "text": "прямо ингибирует обратную транскриптазу ВИЧ",
+          "text": "может вызвать развитие псевдомембранозного энтероколита",
           "correct": false
         },
         {
           "id": 5,
-          "text": "нарушает адсорбцию и вхождение ВИЧ в клетку",
+          "text": "накапливается в костной ткани (препарат выбора при остеомиелите)",
           "correct": false
         }
       ],
@@ -481,33 +515,33 @@
     },
     {
       "id": 10,
-      "question": "Препарат, являющийся производным индолкарбоновой кислоты, обладающий противовирусной и интерфероногенной активностью:",
+      "question": "Для левомицетина характерны все перечисленные ниже осложнения, за исключением:",
       "multi": false,
       "explanation": "",
       "options": [
         {
           "id": 1,
-          "text": "умефеновир",
+          "text": "остеопороз",
           "correct": true
         },
         {
           "id": 2,
-          "text": "ламивудин",
+          "text": "анемия",
           "correct": false
         },
         {
           "id": 3,
-          "text": "софосбувир",
+          "text": "острый продуктивный психоз",
           "correct": false
         },
         {
           "id": 4,
-          "text": "рибавирин",
+          "text": "миокардит",
           "correct": false
         },
         {
           "id": 5,
-          "text": "саквинавир",
+          "text": "диспепсия",
           "correct": false
         }
       ],
@@ -515,67 +549,67 @@
     },
     {
       "id": 11,
-      "question": "Механизм действия осельтамивира:",
-      "multi": false,
+      "question": "Нарушение проницаемости цитоплазматической мембраны микробной клетки характерно для следующих групп антибиотиков:",
+      "multi": true,
       "explanation": "",
       "options": [
         {
           "id": 1,
-          "text": "Блокада М2 каналов вируса гриппа А",
+          "text": "лактамные антибиотики",
           "correct": false
         },
         {
           "id": 2,
-          "text": "Ингибирование РНК-полимеразы вируса гепатита С",
-          "correct": false
-        },
-        {
-          "id": 3,
-          "text": "Ингибирование нейраминидазы вируса гриппа",
+          "text": "полимиксины",
           "correct": true
         },
         {
-          "id": 4,
-          "text": "Ингибирование обратной транскриптазы ВИЧ по механизму антиметаболизма, препятствуя образованию ДНК из вирусной РНК",
+          "id": 3,
+          "text": "макролиды",
           "correct": false
         },
         {
+          "id": 4,
+          "text": "аминогликозиды",
+          "correct": true
+        },
+        {
           "id": 5,
-          "text": "Блокада ДНК-полимеразы вируса по механизму антиметаболизма",
-          "correct": false
+          "text": "полиеновые",
+          "correct": true
         }
       ],
       "fill_in_blanks": []
     },
     {
       "id": 12,
-      "question": "Механизм действия софосбувира:",
-      "multi": false,
+      "question": "Торможение синтеза белка характерно для следующих групп антибиотиков:",
+      "multi": true,
       "explanation": "",
       "options": [
         {
           "id": 1,
-          "text": "Блокада М2 каналов вируса гриппа А",
+          "text": "лактамные антибиотики",
           "correct": false
         },
         {
           "id": 2,
-          "text": "Ингибирование РНК-полимеразы вируса гепатита С",
-          "correct": true
+          "text": "полимиксины",
+          "correct": false
         },
         {
           "id": 3,
-          "text": "Ингибирование нейраминидазы вируса гриппа",
-          "correct": false
+          "text": "макролиды",
+          "correct": true
         },
         {
           "id": 4,
-          "text": "Ингибирование обратной транскриптазы ВИЧ по механизму антиметаболизма, препятствуя образованию ДНК из вирусной РНК",
-          "correct": false
+          "text": "аминогликозиды",
+          "correct": true
         },
         {
           "id": 5,
-          "text": "Блокада ДНК-полимеразы вируса по механизму антиметаболизма",
+          "text": "полиеновые",
           "correct": false
         }
       ],
@@ -583,33 +617,33 @@
     },
     {
       "id": 13,
-      "question": "Механизм действия ламивудина:",
+      "question": "Торможение синтеза нуклеиновых кислот характерно для следующих групп антибиотиков:",
       "multi": false,
       "explanation": "",
       "options": [
         {
           "id": 1,
-          "text": "Блокада М2 каналов вируса гриппа А",
+          "text": "лактамные антибиотики",
           "correct": false
         },
         {
           "id": 2,
-          "text": "Ингибирование РНК-полимеразы вируса гепатита С",
-          "correct": false
+          "text": "рифампицины",
+          "correct": true
         },
         {
           "id": 3,
-          "text": "Ингибирование нейраминидазы вируса гриппа",
+          "text": "макролиды",
           "correct": false
         },
         {
           "id": 4,
-          "text": "Ингибирование обратной транскриптазы ВИЧ по механизму антиметаболизма, препятствуя образованию ДНК из вирусной РНК",
-          "correct": true
+          "text": "аминогликозиды",
+          "correct": false
         },
         {
           "id": 5,
-          "text": "Блокада ДНК-полимеразы вируса по механизму антиметаболизма",
+          "text": "ристамицин",
           "correct": false
         }
       ],
@@ -617,68 +651,132 @@
     },
     {
       "id": 14,
-      "question": "Механизм действия римантадина:",
-      "multi": false,
+      "question": "Препараты, входящие в группу аминогликозидов:",
+      "multi": true,
       "explanation": "",
       "options": [
         {
           "id": 1,
-          "text": "Блокада М2 каналов вируса гриппа А",
-          "correct": true
+          "text": "азитромицин",
+          "correct": false
         },
         {
           "id": 2,
-          "text": "Ингибирование РНК-полимеразы вируса гепатита С",
+          "text": "ампициллин",
           "correct": false
         },
         {
           "id": 3,
-          "text": "Ингибирование нейраминидазы вируса гриппа",
-          "correct": false
+          "text": "гентамицин",
+          "correct": true
         },
         {
           "id": 4,
-          "text": "Ингибирование обратной транскриптазы ВИЧ по механизму антиметаболизма, препятствуя образованию ДНК из вирусной РНК",
+          "text": "ванкомицин",
           "correct": false
         },
         {
           "id": 5,
-          "text": "Блокада ДНК-полимеразы вируса по механизму антиметаболизма",
+          "text": "доксициклин",
           "correct": false
+        },
+        {
+          "id": 6,
+          "text": "имипенем",
+          "correct": false
+        },
+        {
+          "id": 7,
+          "text": "амикацин",
+          "correct": true
         }
       ],
       "fill_in_blanks": []
     },
     {
       "id": 15,
-      "question": "Механизм действия ацикловира:",
+      "question": "Препараты, входящие в группу тетрациклинов:",
       "multi": false,
       "explanation": "",
       "options": [
         {
           "id": 1,
-          "text": "Блокада М2 каналов вируса гриппа А",
+          "text": "азитромицин",
           "correct": false
         },
         {
           "id": 2,
-          "text": "Ингибирование РНК-полимеразы вируса гепатита С",
+          "text": "ампициллин",
           "correct": false
         },
         {
           "id": 3,
-          "text": "Ингибирование нейраминидазы вируса гриппа",
+          "text": "гентамицин",
           "correct": false
         },
         {
           "id": 4,
-          "text": "Ингибирование обратной транскриптазы ВИЧ по механизму антиметаболизма, препятствуя образованию ДНК из вирусной РНК",
+          "text": "ванкомицин",
           "correct": false
         },
         {
           "id": 5,
-          "text": "Блокада ДНК-полимеразы вируса по механизму антиметаболизма",
+          "text": "доксициклин",
           "correct": true
+        },
+        {
+          "id": 6,
+          "text": "имипенем",
+          "correct": false
+        },
+        {
+          "id": 7,
+          "text": "амикацин",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 16,
+      "question": "Препараты, входящие в группу гликопептидов:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "азитромицин",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "ампициллин",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "гентамицин",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "ванкомицин",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "доксициклин",
+          "correct": false
+        },
+        {
+          "id": 6,
+          "text": "имипенем",
+          "correct": false
+        },
+        {
+          "id": 7,
+          "text": "амикацин",
+          "correct": false
         }
       ],
       "fill_in_blanks": []

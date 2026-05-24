@@ -133,7 +133,7 @@ def parse_md_file(file_path):
     
     return {"title": title, "questions": questions_data}
 
-def generate_html_test(test_data, output_path):
+def generate_html_test(test_data, output_path, prev_test_link, next_test_link, main_page_link):
     title = test_data['title']
     questions = test_data['questions']
 
@@ -291,6 +291,29 @@ def generate_html_test(test_data, output_path):
             background-color: #ffe6e6;
             border-color: #e6a3a3;
         }}
+        .navigation-block {{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+            padding: 10px 0;
+            border-top: 1px solid #eee;
+        }}
+        .navigation-link {{
+            color: #0056b3;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.2s ease;
+        }}
+        .navigation-link:hover {{
+            background-color: #eaf2f8;
+        }}
+        .navigation-link.disabled {{
+            color: #ccc;
+            pointer-events: none;
+            cursor: default;
+        }}
     </style>
 </head>
 <body>
@@ -305,6 +328,12 @@ def generate_html_test(test_data, output_path):
         </div>
         <div id="results" class="results-block">
             Ваш результат: <span id="score">0</span> из <span id="totalQuestions">0</span> (<span id="percentage">0</span>%)
+        </div>
+
+        <div class="navigation-block">
+            {f'<a href="{prev_test_link}" class="navigation-link">Предыдущий тест</a>' if prev_test_link else ''}
+            <a href="{main_page_link}" class="navigation-link">Все тесты</a>
+            {f'<a href="{next_test_link}" class="navigation-link">Следующий тест</a>' if next_test_link else ''}
         </div>
     </div>
 
@@ -522,17 +551,51 @@ def process_all_source_files(source_dir, json_dir, tests_dir):
             with open(json_output_path, 'w', encoding='utf-8') as f:
                 json.dump(parsed_data, f, ensure_ascii=False, indent=2)
             
-            # Generate HTML test file
+            # Define html_filename here before appending to metadata
             html_filename = transliterate(parsed_data["title"]) + ".html"
-            html_output_path = os.path.join(tests_dir, html_filename)
-            generate_html_test(parsed_data, html_output_path)
 
             all_test_metadata.append({
                 "title": parsed_data["title"],
                 "filename": html_filename,
                 "github_pages_link": f"https://nicotinko.github.io/pharmacologyTest/tests/{html_filename}"
             })
-    return all_test_metadata
+    
+    # Sort test_metadata alphabetically by title for consistent navigation
+    sorted_test_metadata = sorted(all_test_metadata, key=lambda x: x['title'])
+
+    # Regenerate HTML test files, now with navigation context
+    for i, test_meta in enumerate(sorted_test_metadata):
+        # We need to re-parse the original MD file to get the full test_data
+        # This is not ideal but necessary given the current function structure
+        original_md_filename = ""
+        for filename in os.listdir(source_dir):
+            if transliterate(os.path.splitext(os.path.basename(os.path.join(source_dir, filename)))[0]) + ".html" == test_meta["filename"]:
+                original_md_filename = filename
+                break
+        
+        if not original_md_filename:
+            print(f"Warning: Could not find original MD file for {test_meta['title']}")
+            continue
+
+        file_path = os.path.join(source_dir, original_md_filename)
+        parsed_data = parse_md_file(file_path)
+
+        # Determine previous and next test links
+        prev_test_link = None
+        if i > 0:
+            prev_test_link = sorted_test_metadata[i-1]['filename']
+        
+        next_test_link = None
+        if i < len(sorted_test_metadata) - 1:
+            next_test_link = sorted_test_metadata[i+1]['filename']
+        
+        main_page_link = "../index.html" # Assuming index.html is in the root, and tests are in 'tests/'
+
+        # Pass navigation links to generate_html_test
+        html_output_path = os.path.join(tests_dir, test_meta["filename"])
+        generate_html_test(parsed_data, html_output_path, prev_test_link, next_test_link, main_page_link)
+
+    return sorted_test_metadata # Return sorted metadata for catalog/index generation
 
 
 def generate_catalog_html(test_metadata, output_path):

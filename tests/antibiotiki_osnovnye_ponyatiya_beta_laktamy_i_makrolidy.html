@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Антигистаминные</title>
+    <title>Антибиотики. Основные понятия. Бета-лактамы и макролиды</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -152,11 +152,34 @@
             background-color: #ffe6e6;
             border-color: #e6a3a3;
         }
+        .navigation-block {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+            padding: 10px 0;
+            border-top: 1px solid #eee;
+        }
+        .navigation-link {
+            color: #0056b3;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.2s ease;
+        }
+        .navigation-link:hover {
+            background-color: #eaf2f8;
+        }
+        .navigation-link.disabled {
+            color: #ccc;
+            pointer-events: none;
+            cursor: default;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Антигистаминные</h1>
+        <h1>Антибиотики. Основные понятия. Бета-лактамы и макролиды</h1>
         <form id="quizForm">
             <!-- Questions will be rendered here by JavaScript -->
         </form>
@@ -167,70 +190,91 @@
         <div id="results" class="results-block">
             Ваш результат: <span id="score">0</span> из <span id="totalQuestions">0</span> (<span id="percentage">0</span>%)
         </div>
+
+        <div class="navigation-block">
+            <a href="antiaritmiki.html" class="navigation-link">Предыдущий тест</a>
+            <a href="../index.html" class="navigation-link">Все тесты</a>
+            <a href="antibiotiki_chast_2.html" class="navigation-link">Следующий тест</a>
+        </div>
     </div>
 
     <script>
         const quizData = {
-  "title": "Антигистаминные",
+  "title": "Антибиотики. Основные понятия. Бета-лактамы и макролиды",
   "questions": [
     {
       "id": 1,
-      "question": "Препарат, блокирующий Н1 гистаминовые рецепторы, обладающий выраженным угнетающим действием на центральную нервную систему (ЦНС):",
-      "multi": false,
+      "question": "К основным принципам химиотерапии относятся:",
+      "multi": true,
       "explanation": "",
       "options": [
         {
           "id": 1,
-          "text": "дифенгидрамин",
+          "text": "выбор оптимального антибиотика с учетом вида возбудителя и спектра действия препарата",
           "correct": true
         },
         {
           "id": 2,
-          "text": "кромоглициевая кислота",
+          "text": "назначение минимально эффективных доз антибиотика с целью снижения токсичности препарата",
           "correct": false
         },
         {
           "id": 3,
-          "text": "фамотидин",
-          "correct": false
+          "text": "назначение достаточно высоких доз препаратов для достижения бактерицидных или бактериостатических концентраций",
+          "correct": true
         },
         {
           "id": 4,
-          "text": "лоратадин",
+          "text": "прекращение терапии при достижении клинического улучшения",
           "correct": false
+        },
+        {
+          "id": 5,
+          "text": "соблюдение оптимальной длительности курса терапии",
+          "correct": true
         }
       ],
       "fill_in_blanks": []
     },
     {
       "id": 2,
-      "question": "Препарат, блокирующий Н1 гистаминовые рецепторы, метаболит терфенадина, лишенный кардиотоксичности:",
-      "multi": false,
+      "question": "К антибиотикам широкого спектра действия относятся:",
+      "multi": true,
       "explanation": "",
       "options": [
         {
           "id": 1,
-          "text": "лоратадин",
+          "text": "биосинтетические пенициллины",
           "correct": false
         },
         {
           "id": 2,
-          "text": "дифенгидрамин",
-          "correct": false
-        },
-        {
-          "id": 3,
-          "text": "фамотидин",
-          "correct": false
-        },
-        {
-          "id": 4,
-          "text": "фексофенадин",
+          "text": "цефалоспорины",
           "correct": true
         },
         {
+          "id": 3,
+          "text": "аминогликозиды",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "биосинтетические макролиды",
+          "correct": false
+        },
+        {
           "id": 5,
-          "text": "кромоглициевая кислота",
+          "text": "тетрациклины",
+          "correct": true
+        },
+        {
+          "id": 6,
+          "text": "рифампицины",
+          "correct": false
+        },
+        {
+          "id": 7,
+          "text": "polyмиксины",
           "correct": false
         }
       ],
@@ -238,67 +282,67 @@
     },
     {
       "id": 3,
-      "question": "Препарат, применяемый для лечения язвенной болезни 12-перстной кишки:",
-      "multi": false,
+      "question": "К β-лактамным антибиотикам относятся:",
+      "multi": true,
       "explanation": "",
       "options": [
         {
           "id": 1,
-          "text": "кромоглициевая кислота",
+          "text": "ванкомицин",
           "correct": false
         },
         {
           "id": 2,
-          "text": "фамотидин",
+          "text": "азтреонам",
           "correct": true
         },
         {
           "id": 3,
-          "text": "дифенгидрамин",
-          "correct": false
+          "text": "ампициллин",
+          "correct": true
         },
         {
           "id": 4,
-          "text": "дименгидринат",
-          "correct": false
+          "text": "цефалексин",
+          "correct": true
         },
         {
           "id": 5,
-          "text": "кетотифен",
+          "text": "азитромицин",
           "correct": false
+        },
+        {
+          "id": 6,
+          "text": "меропенем",
+          "correct": true
         }
       ],
       "fill_in_blanks": []
     },
     {
       "id": 4,
-      "question": "Препарат, блокирующий Н1 гистаминовые рецепторы, не обладающий седативным действием:",
-      "multi": false,
+      "question": "Антибиотики, которые действуют на стафилококков, продуцирующих пенициллиназу:",
+      "multi": true,
       "explanation": "",
       "options": [
         {
           "id": 1,
-          "text": "фамотидин",
+          "text": "ампициллин",
           "correct": false
         },
         {
           "id": 2,
-          "text": "дифенгидрамин",
-          "correct": false
+          "text": "оксациллин",
+          "correct": true
         },
         {
           "id": 3,
-          "text": "клемастин",
-          "correct": false
+          "text": "меропенем",
+          "correct": true
         },
         {
           "id": 4,
-          "text": "кетотифен",
-          "correct": false
-        },
-        {
-          "id": 5,
-          "text": "дезлоратадин",
+          "text": "ванкомицин",
           "correct": true
         }
       ],
@@ -306,28 +350,28 @@
     },
     {
       "id": 5,
-      "question": "Антигистаминный препарат непрямого действия:",
-      "multi": false,
+      "question": "К ингибиторам β-лактамаз относятся:",
+      "multi": true,
       "explanation": "",
       "options": [
         {
           "id": 1,
-          "text": "дифенгидрамин",
+          "text": "салициловая кислота",
           "correct": false
         },
         {
           "id": 2,
-          "text": "кромоглициевая кислота",
+          "text": "клавулановая кислота",
           "correct": true
         },
         {
           "id": 3,
-          "text": "клемастин",
-          "correct": false
+          "text": "сульбактам",
+          "correct": true
         },
         {
           "id": 4,
-          "text": "фамотидин",
+          "text": "циластатин",
           "correct": false
         }
       ],
@@ -335,131 +379,278 @@
     },
     {
       "id": 6,
-      "question": "Препарат, эффективный при воздушной и морской болезни:",
-      "multi": false,
+      "question": "Препараты, действующие на синегнойную палочку:",
+      "multi": true,
       "explanation": "",
       "options": [
         {
           "id": 1,
-          "text": "дименгидринат",
-          "correct": true
-        },
-        {
-          "id": 2,
-          "text": "фамотидин",
+          "text": "амоксициллин",
           "correct": false
         },
         {
+          "id": 2,
+          "text": "азтреонам",
+          "correct": true
+        },
+        {
           "id": 3,
-          "text": "кромоглициевая кислота",
+          "text": "оксациллин",
           "correct": false
         },
         {
           "id": 4,
-          "text": "лоратадин",
-          "correct": false
+          "text": "цефоперазон",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "полимиксин B",
+          "correct": true
         }
       ],
       "fill_in_blanks": []
     },
     {
       "id": 7,
-      "question": "Побочные эффекты, характерные для блокаторов Н1 гистаминовых рецепторов первого поколения:",
+      "question": "Нарушение синтеза клеточной стенки микробов характерно для следующих групп антибиотиков:",
       "multi": true,
       "explanation": "",
       "options": [
         {
           "id": 1,
-          "text": "атропиноподобные эффекты",
+          "text": "лактамные антибиотики",
           "correct": true
         },
         {
           "id": 2,
-          "text": "диарея, тошнота",
+          "text": "рифампицины",
           "correct": false
         },
         {
           "id": 3,
-          "text": "повышение артериального давления",
+          "text": "макролиды",
           "correct": false
         },
         {
           "id": 4,
-          "text": "привыкание",
-          "correct": true
+          "text": "аминогликозиды",
+          "correct": false
         },
         {
           "id": 5,
-          "text": "лекарственная зависимость",
-          "correct": false
+          "text": "ристамицин",
+          "correct": true
         }
       ],
       "fill_in_blanks": []
     },
     {
       "id": 8,
-      "question": "Препараты, тормозящие высвобождение гистамина и других медиаторов воспаления из тучных клеток:",
-      "multi": true,
+      "question": "Препараты, входящие в группу макролидов:",
+      "multi": false,
       "explanation": "",
       "options": [
         {
           "id": 1,
-          "text": "ранитидин",
-          "correct": false
+          "text": "азитромицин",
+          "correct": true
         },
         {
           "id": 2,
-          "text": "дифенгидрамин",
+          "text": "ампициллин",
           "correct": false
         },
         {
           "id": 3,
-          "text": "лоратадин",
+          "text": "гентамицин",
           "correct": false
         },
         {
           "id": 4,
-          "text": "кетотифен",
-          "correct": true
+          "text": "ванкомицин",
+          "correct": false
         },
         {
           "id": 5,
-          "text": "кромоглициевая кислота",
-          "correct": true
+          "text": "доксициклин",
+          "correct": false
+        },
+        {
+          "id": 6,
+          "text": "имипенем",
+          "correct": false
+        },
+        {
+          "id": 7,
+          "text": "амикацин",
+          "correct": false
         }
       ],
       "fill_in_blanks": []
     },
     {
       "id": 9,
-      "question": "Препараты, являющиеся активными метаболитами Н1-гистаминоблокаторов второго поколения:",
+      "question": "Препараты, входящие в группу пенициллинов:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "азитромицин",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "ампициллин",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "гентамицин",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "ванкомицин",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "доксициклин",
+          "correct": false
+        },
+        {
+          "id": 6,
+          "text": "имипенем",
+          "correct": false
+        },
+        {
+          "id": 7,
+          "text": "амикацин",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 10,
+      "question": "Препараты, входящие в группу карбапенемов:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "азитромицин",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "ампициллин",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "гентамицин",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "ванкомицин",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "доксициклин",
+          "correct": false
+        },
+        {
+          "id": 6,
+          "text": "имипенем",
+          "correct": true
+        },
+        {
+          "id": 7,
+          "text": "амикацин",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 11,
+      "question": "Бактериостатическое действие оказывают следующие группы антибиотиков:",
       "multi": true,
       "explanation": "",
       "options": [
         {
           "id": 1,
-          "text": "дезлоратадин",
+          "text": "тетрациклины",
           "correct": true
         },
         {
           "id": 2,
-          "text": "цетиризин",
+          "text": "бета-лактамные антибиотики",
           "correct": false
         },
         {
           "id": 3,
-          "text": "лоратадин",
+          "text": "аминогликозиды",
           "correct": false
         },
         {
           "id": 4,
-          "text": "левоцетиризин",
+          "text": "полимиксины",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "амфениколы",
+          "correct": true
+        },
+        {
+          "id": 6,
+          "text": "линкозамиды",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 12,
+      "question": "Бактериицидное действие оказывают следующие группы антибиотиков:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "тетрациклины",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "лактамные антибиотики",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "аминогликозиды",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "полимиксины",
           "correct": true
         },
         {
           "id": 5,
-          "text": "фексофенадин",
-          "correct": true
+          "text": "амфениколы",
+          "correct": false
+        },
+        {
+          "id": 6,
+          "text": "линкозамиды",
+          "correct": false
         }
       ],
       "fill_in_blanks": []

@@ -152,6 +152,29 @@
             background-color: #ffe6e6;
             border-color: #e6a3a3;
         }
+        .navigation-block {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+            padding: 10px 0;
+            border-top: 1px solid #eee;
+        }
+        .navigation-link {
+            color: #0056b3;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.2s ease;
+        }
+        .navigation-link:hover {
+            background-color: #eaf2f8;
+        }
+        .navigation-link.disabled {
+            color: #ccc;
+            pointer-events: none;
+            cursor: default;
+        }
     </style>
 </head>
 <body>
@@ -166,6 +189,12 @@
         </div>
         <div id="results" class="results-block">
             Ваш результат: <span id="score">0</span> из <span id="totalQuestions">0</span> (<span id="percentage">0</span>%)
+        </div>
+
+        <div class="navigation-block">
+            <a href="protivovirusnye.html" class="navigation-link">Предыдущий тест</a>
+            <a href="../index.html" class="navigation-link">Все тесты</a>
+            <a href="protivotuberkulyoznye.html" class="navigation-link">Следующий тест</a>
         </div>
     </div>
 
