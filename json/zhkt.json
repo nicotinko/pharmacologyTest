@@ -1,0 +1,864 @@
+{
+  "title": "ЖКТ",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Препарат, являющийся блокатором H2-гистаминовых рецепторов:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "дименгидринат",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "омепразол",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "сукралфат",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "фамотидин",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "лоратадин",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 2,
+      "question": "Препарат, создающий механическую защиту язвенной поверхности в желудке (специфический гастропротектор), обладающий также антигеликобактерным действием:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "фамотидин",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "висмута трикалия дицитрат",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "омепразол",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "метоклопрамид",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "мизопростол",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 3,
+      "question": "Препарат, повышающий синтез простагландинов в слизистой желудка, специфический гастропротектор:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "динопрост",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "мизопростол",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "ребамипид",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "сукральфат",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "омепразол",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 4,
+      "question": "Препарат, являющийся ингибитором протонового насоса в желудке:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "фамотидин",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "сукралфат",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "рабепразол",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "пирензепин",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "mebeverin",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 5,
+      "question": "Противодиарейный препарат, активирующий периферические опиатные рецепторы:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "лоперамид",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "неостигмин",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "диосмектит",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "метоклопрамид",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "оксафенамид",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 6,
+      "question": "Антацидный препарат, действующий быстро и кратковременно, всасывающийся из желудочно-кишечного тракта, способный вызвать вторичное усиление секреции соляной кислоты:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "алюминия фосфат",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "натрия гидрокарбонат",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "алюминия гидроксид",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "магния гидроксид",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "висмута трикалия дицитрат",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 7,
+      "question": "При послеоперационной атонии кишечника применяют:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "атропин",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "лоперамид",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "бисакодил",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "неостигмин",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "метоклопрамид",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 8,
+      "question": "При тяжелой рвоте на фоне цитостатической терапии применяют:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "блокатор Д2-рецепторов метоклопрамид",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "блокатор Н1-рецепторов дименгидринат",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "блокатор NK1-рецепторов апрепитант",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 9,
+      "question": "Препарат, применяемый для профилактики рвоты, связанной с укачиванием:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "диазепам",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "хлорпромазин",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "метоклопрамид",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "лоперамид",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "дименгидринат",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 10,
+      "question": "Все указанное о препарате гиосцина бутилбромид верно, ЗА ИСКЛЮЧЕНИЕМ:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "используется при кишечных коликах",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "применяется для снижения секреции HCl",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "обладает периферическим действием в ЖКТ",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "снимает спазм с желчных протоков",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "обладает М-холинолитическим действием",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 11,
+      "question": "Все положения, касающиеся омепразола, верные, за исключением:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "эффективность усиливается при комбинации омепразола с антацидами",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "блокирует секрецию соляной кислоты париетальными клетками желудка",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "действует на Helicobacter pylori",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "является пролекарством, активирующимся в кислой среде",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 12,
+      "question": "Механизмы действия прокинетиков:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "блокада Д2-дофаминовых рецепторов желудка",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "активация периферических опиатных рецепторов",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "активация 5-НТ4-рецепторов",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "блокада 5-НТ3-рецепторов",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "активация мотилиновых рецепторов",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 13,
+      "question": "Механизмы действия антиэметиков:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "блокада Д2-дофаминовых рецепторов",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "активация периферических опиатных рецепторов",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "активация 5-НТ4-рецепторов",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "блокада 5-НТ3-рецепторов",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "блокада NK1-рецепторов",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 14,
+      "question": "Для вонопразана характерны следующие эффекты:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "уменьшает секрецию соляной кислоты в париетальных клетках желудка",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "является активным лекарством",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "эффект снижается после приема пищи",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "действие развивается быстро",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "является пролекарством, активирующимся в кислой среде",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 15,
+      "question": "Показания к метоклопрамиду следующие:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "тошнота и рвота",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "запоры",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "нарушение моторики желудка, гастростаз",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "диарея",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "гастроэзофагеальная рефлюксная болезнь (ГЭРБ)",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 16,
+      "question": "Препараты, обладающие противорвотным действием:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "диазепам",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "хлорпромазин",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "бисакодил",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "лоперамид",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "метоклопрамид",
+          "correct": true
+        },
+        {
+          "id": 6,
+          "text": "ондансетрон",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 17,
+      "question": "Висмута трикалия дицитрат обладает следующими эффектами:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "образует пленку на язвенной поверхности",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "подавляет Helicobacter pylori",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "подавляет синтез HCl",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "повышает синтез простагландина Е2",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "усиливает эвакуаторную функцию желудка",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 18,
+      "question": "Препараты, тормозящие перистальтику кишечника:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "неостигмин",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "лоперамид",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "бисакодил",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "дротаверин",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "оксафенамид",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 19,
+      "question": "К прокинетикам относятся:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "мозаприд",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "лоперамид",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "домперидон",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "мебеверин",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "метоклопрамид",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 20,
+      "question": "Оксафенамид обладает следующими эффектами:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "усиливает секрецию желчи",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "подавляет воспаление",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "растворяет камни в желчных протоках",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "снимает спазм с желчных протоков",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "усиливает эвакуацию желчи",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 21,
+      "question": "К холеретикам относятся:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "магния сульфат",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "дротаверин",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "холензим",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "сорбит",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "гиосцина бутилбромид",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 22,
+      "question": "К холекинетикам относятся:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "магния сульфат",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "дротаверин",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "холензим",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "сорбит",
+          "correct": true
+        },
+        {
+          "id": 5,
+          "text": "гиосцина бутилбромид",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 23,
+      "question": "К холеспазмолитикам относятся:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "магния сульфат",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "дротаверин",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "холензим",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "сорбит",
+          "correct": false
+        },
+        {
+          "id": 5,
+          "text": "гиосцина бутилбромид",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 24,
+      "question": "К прокинетикам относятся:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "метоклопрамид",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "ондансетрон",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "сукральфат",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "апрепитант",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 25,
+      "question": "К гастропротекторам относятся:",
+      "multi": false,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "метоклопрамид",
+          "correct": false
+        },
+        {
+          "id": 2,
+          "text": "ондансетрон",
+          "correct": false
+        },
+        {
+          "id": 3,
+          "text": "сукральфат",
+          "correct": true
+        },
+        {
+          "id": 4,
+          "text": "апрепитант",
+          "correct": false
+        }
+      ],
+      "fill_in_blanks": []
+    },
+    {
+      "id": 26,
+      "question": "К антиэметикам относятся:",
+      "multi": true,
+      "explanation": "",
+      "options": [
+        {
+          "id": 1,
+          "text": "метоклопрамид",
+          "correct": true
+        },
+        {
+          "id": 2,
+          "text": "ондансетрон",
+          "correct": true
+        },
+        {
+          "id": 3,
+          "text": "сукральфат",
+          "correct": false
+        },
+        {
+          "id": 4,
+          "text": "апрепитант",
+          "correct": true
+        }
+      ],
+      "fill_in_blanks": []
+    }
+  ]
+}
