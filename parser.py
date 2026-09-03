@@ -1,6 +1,17 @@
 import re
 import json
 import os
+import html
+
+
+class SourceFormatError(ValueError):
+    """Raised when a source test cannot be converted without data loss."""
+
+
+QUESTION_HEADER = re.compile(r'^##\s+(\d+)\.\s*(.+?)\s*$', re.MULTILINE)
+OPTION_LINE = re.compile(r'^([A-Za-zА-Яа-яЁё])\)\s*(.*)$')
+EXPLANATION_BLOCK = re.compile(r'\[\[(.*?)\]\]', re.DOTALL)
+MANIFEST_FILE = '.generated-manifest.json'
 
 def transliterate(name):
     """
@@ -37,111 +48,106 @@ def parse_md_file(file_path):
     if topic_title_match:
         title = topic_title_match.group(1).strip()
 
+    headers = list(QUESTION_HEADER.finditer(content))
+    if not headers:
+        raise SourceFormatError(f"{file_path}: no questions in the form '## N. Question'.")
+
     questions_data = []
-    current_question = None
-    question_id_counter = 1
+    for question_id, header in enumerate(headers, start=1):
+        next_start = headers[question_id].start() if question_id < len(headers) else len(content)
+        body = content[header.end():next_start]
+        source_number = header.group(1)
+        explanation_matches = EXPLANATION_BLOCK.findall(body)
+        if len(explanation_matches) != 1:
+            raise SourceFormatError(
+                f"{file_path}, question {source_number}: exactly one [[explanation]] block is required."
+            )
+        explanation = explanation_matches[0].strip()
+        if not explanation:
+            raise SourceFormatError(f"{file_path}, question {source_number}: explanation cannot be empty.")
 
-    # Split content by '## N.' for each question
-    question_blocks = re.split(r'## \d+\.\s*', content)
-    # The first element is usually the file title/header, skip it.
-    if question_blocks and question_blocks[0].strip() and not re.match(r'## \d+\.\s*', question_blocks[0]): # If first block contains title not a question
-         question_blocks = question_blocks[1:] # Skip title part
-    else: 
-        pass # Keep all blocks if no title was split off or if it was a question (handled by `re.split` itself)
-
-
-    for block in question_blocks:
-        if not block.strip():
-            continue
-
-        q_lines = block.strip().split('\n')
-        question_text = ""
-        options = []
-        correct_options_text = []
-        fill_in_blanks = []
-        
-        # Check for fill-in-the-blanks question
-        fill_in_blanks_matches = re.findall(r'{(.+?)}', q_lines[0])
-        if fill_in_blanks_matches:
-            question_text = q_lines[0].strip()
-            all_fill_in_blanks_options = []
-            for match in fill_in_blanks_matches:
-                fill_in_blanks_raw = match.split('|')
-                all_fill_in_blanks_options.append([s.strip() for s in fill_in_blanks_raw])
-            
-            # For fill-in-the-blanks, 'multi' means multiple blanks to fill, not multiple choice
-            # For simplicity in initial implementation, we'll keep multi as False and assume each blank is a separate check
-            
-            # Extract explanation for fill-in-the-blanks
-            explanation = ""
-            explanation_match = re.search(r'\[\[(.*?)\]\]', block, re.DOTALL)
-            if explanation_match:
-                explanation = explanation_match.group(1).strip()
-                # Remove explanation from question_text if it was mistakenly included
-                question_text = re.sub(r'\[\[.*?\]\]', '', question_text).strip()
-
-            questions_data.append({
-                "id": question_id_counter,
-                "question": question_text,
-                "multi": len(all_fill_in_blanks_options) > 1, # True if more than one blank
-                "explanation": explanation, # Use extracted explanation
-                "options": [],
-                "fill_in_blanks": all_fill_in_blanks_options # List of lists for multiple blanks
-            })
-            question_id_counter += 1
-            continue
-
-        # For multiple choice questions
-        question_text = q_lines[0].strip()
-        options_start_index = 1
-        
-        # Check if the question text itself contains an explanation for single line questions
-        explanation_match_in_qtext = re.search(r'\[\[(.*?)\]\]', question_text)
-        if explanation_match_in_qtext:
-            explanation = explanation_match_in_qtext.group(1).strip()
-            question_text = re.sub(r'\[\[.*?\]\]', '', question_text).strip()
-        else:
-            explanation = ""
-
-        option_id_counter = 1
-        for line_idx, line in enumerate(q_lines[options_start_index:]):
-            line = line.strip()
+        without_explanation = EXPLANATION_BLOCK.sub('', body)
+        question_lines = [header.group(2).strip()]
+        option_lines = []
+        options_started = False
+        for raw_line in without_explanation.splitlines():
+            line = raw_line.strip()
             if not line:
                 continue
-            
-            # Check for explanation after options
-            explanation_match_after_options = re.match(r'\[\[(.*?)\]\]', line, re.DOTALL)
-            if explanation_match_after_options:
-                explanation = explanation_match_after_options.group(1).strip()
-                break # Stop processing lines as options once explanation is found
-
-            option_match = re.match(r'^[a-zА-Я]\)\s*(.*)', line)
+            option_match = OPTION_LINE.match(line)
             if option_match:
-                option_text_raw = option_match.group(1)
-                is_correct = option_text_raw.endswith('**')
-                option_text = option_text_raw.replace('**', '').strip()
-                options.append({"id": option_id_counter, "text": option_text, "correct": is_correct})
-                if is_correct:
-                    correct_options_text.append(option_text)
-                option_id_counter += 1
+                options_started = True
+                option_lines.append(option_match.group(2).strip())
+            elif options_started and (line == '---' or line.startswith('#')):
+                continue
+            elif options_started:
+                raise SourceFormatError(
+                    f"{file_path}, question {source_number}: unrecognised line after answer options: {line!r}."
+                )
+            else:
+                question_lines.append(line)
 
-        if question_text and options:
-            multi_choice = sum(1 for opt in options if opt['correct']) > 1
+        question_text = ' '.join(question_lines).strip()
+        if not question_text:
+            raise SourceFormatError(f"{file_path}, question {source_number}: question text cannot be empty.")
+
+        fill_in_blanks_matches = re.findall(r'{(.+?)}', question_text)
+        if fill_in_blanks_matches:
+            if option_lines:
+                raise SourceFormatError(
+                    f"{file_path}, question {source_number}: a fill-in question cannot also contain options."
+                )
+            fill_in_blanks = []
+            for raw_answers in fill_in_blanks_matches:
+                answers = [answer.strip() for answer in raw_answers.split('|') if answer.strip()]
+                if not answers:
+                    raise SourceFormatError(
+                        f"{file_path}, question {source_number}: every blank needs at least one accepted answer."
+                    )
+                fill_in_blanks.append(answers)
             questions_data.append({
-                "id": question_id_counter,
+                "id": question_id,
                 "question": question_text,
-                "multi": multi_choice,
-                "explanation": explanation, # Use extracted explanation
-                "options": options,
-                "fill_in_blanks": []
+                "multi": len(fill_in_blanks) > 1,
+                "explanation": explanation,
+                "options": [],
+                "fill_in_blanks": fill_in_blanks,
             })
-            question_id_counter += 1
+            continue
+
+        if not option_lines:
+            raise SourceFormatError(f"{file_path}, question {source_number}: no answer options found.")
+
+        options = []
+        for option_id, option_text_raw in enumerate(option_lines, start=1):
+            is_correct = option_text_raw.endswith('**')
+            option_text = option_text_raw[:-2].rstrip() if is_correct else option_text_raw
+            if not option_text:
+                raise SourceFormatError(
+                    f"{file_path}, question {source_number}: an answer option cannot be empty."
+                )
+            options.append({"id": option_id, "text": option_text, "correct": is_correct})
+
+        if not any(option['correct'] for option in options):
+            raise SourceFormatError(
+                f"{file_path}, question {source_number}: mark at least one correct option with **."
+            )
+        questions_data.append({
+            "id": question_id,
+            "question": question_text,
+            "multi": sum(option['correct'] for option in options) > 1,
+            "explanation": explanation,
+            "options": options,
+            "fill_in_blanks": [],
+        })
     
     return {"title": title, "questions": questions_data}
 
 def generate_html_test(test_data, output_path, prev_test_link, next_test_link, main_page_link):
     title = test_data['title']
     questions = test_data['questions']
+    safe_title = html.escape(title)
+    safe_quiz_data = json.dumps(test_data, ensure_ascii=False, indent=2).replace('</', '<\\/')
 
     html_content = f"""
 <!DOCTYPE html>
@@ -149,7 +155,7 @@ def generate_html_test(test_data, output_path, prev_test_link, next_test_link, m
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{title}</title>
+    <title>{safe_title}</title>
     <style>
         body {{
             font-family: Arial, sans-serif;
@@ -178,12 +184,20 @@ def generate_html_test(test_data, output_path, prev_test_link, next_test_link, m
             border-radius: 5px;
             background-color: #f9f9f9;
         }}
+        .question-fieldset {{
+            min-width: 0;
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }}
         .question-text {{
             font-weight: bold;
             margin-bottom: 10px;
             line-height: 1.5;
             position: relative; /* For positioning the icon */
             padding-right: 30px; /* Add space for the icon */
+            width: 100%;
+            box-sizing: border-box;
         }}
         .question-status-icon {{
             position: absolute;
@@ -216,6 +230,10 @@ def generate_html_test(test_data, output_path, prev_test_link, next_test_link, m
         }}
         .options-list label:hover {{
             background-color: #e9e9e9;
+        }}
+        .options-list label:focus-within {{
+            outline: 2px solid #0056b3;
+            outline-offset: 2px;
         }}
         input[type="radio"], input[type="checkbox"] {{
             margin-right: 10px;
@@ -324,7 +342,7 @@ def generate_html_test(test_data, output_path, prev_test_link, next_test_link, m
 </head>
 <body>
     <div class="container">
-        <h1>{title}</h1>
+        <h1>{safe_title}</h1>
         <form id="quizForm">
             <!-- Questions will be rendered here by JavaScript -->
         </form>
@@ -332,7 +350,7 @@ def generate_html_test(test_data, output_path, prev_test_link, next_test_link, m
             <button type="button" class="check-button" onclick="checkAnswers()">Проверить</button>
             <button type="button" class="reset-button" onclick="resetQuiz()">Сбросить</button>
         </div>
-        <div id="results" class="results-block">
+        <div id="results" class="results-block" role="status" aria-live="polite" aria-atomic="true">
             Ваш результат: <span id="score">0</span> из <span id="totalQuestions">0</span> (<span id="percentage">0</span>%)
         </div>
 
@@ -344,63 +362,93 @@ def generate_html_test(test_data, output_path, prev_test_link, next_test_link, m
     </div>
 
     <script>
-        const quizData = {json.dumps(test_data, ensure_ascii=False, indent=2)};
+        const quizData = {safe_quiz_data};
 
         document.addEventListener('DOMContentLoaded', () => {{
             renderQuiz();
         }});
 
+        function appendQuestionText(container, question) {{
+            const parts = question.split(/({{.*?}})/g);
+            let blankIndex = 0;
+            parts.forEach(part => {{
+                if (/^{{.*}}$/.test(part)) {{
+                    const input = document.createElement('input');
+                    input.type = 'text';
+                    input.className = 'fill-in-blank-input';
+                    input.dataset.blankIndex = String(blankIndex++);
+                    input.setAttribute('aria-label', `Ответ на пропуск ${{blankIndex}}`);
+                    container.appendChild(input);
+                }} else {{
+                    container.appendChild(document.createTextNode(part));
+                }}
+            }});
+        }}
+
         function renderQuiz() {{
             const quizForm = document.getElementById('quizForm');
-            quizForm.innerHTML = ''; // Clear previous questions
+            quizForm.replaceChildren();
             quizData.questions.forEach(q => {{
                 const questionBlock = document.createElement('div');
-                questionBlock.classList.add('question-block');
-                questionBlock.setAttribute('data-question-id', q.id);
+                questionBlock.className = 'question-block';
+                questionBlock.dataset.questionId = String(q.id);
 
-                const questionText = document.createElement('p');
-                questionText.classList.add('question-text');
-                
-                let qTextHtml = q.question;
-                if (q.fill_in_blanks && q.fill_in_blanks.length > 0) {{
-                    let blankIndex = 0;
-                    qTextHtml = q.question.replace(/{{.*?}}/g, () => {{
-                        return `<input type="text" class="fill-in-blank-input" data-blank-index="${{blankIndex++}}" />`;
-                    }});
-                }}
-                questionText.innerHTML = `<span>${{q.id}}. ${{qTextHtml}}</span> <br> <small>(${{q.multi ? 'Несколько правильных ответов' : 'Один правильный ответ'}})</small> <span class="question-status-icon"></span>`;
-                questionBlock.appendChild(questionText);
+                const fieldset = document.createElement('fieldset');
+                fieldset.className = 'question-fieldset';
+                const legend = document.createElement('legend');
+                legend.className = 'question-text';
+                const questionNumber = document.createElement('span');
+                questionNumber.textContent = `${{q.id}}. `;
+                legend.appendChild(questionNumber);
+                appendQuestionText(legend, q.question);
+                legend.appendChild(document.createElement('br'));
+                const hint = document.createElement('small');
+                hint.textContent = q.multi ? '(Несколько правильных ответов)' : '(Один правильный ответ)';
+                legend.appendChild(hint);
+                const statusIcon = document.createElement('span');
+                statusIcon.className = 'question-status-icon';
+                statusIcon.setAttribute('aria-hidden', 'true');
+                legend.appendChild(statusIcon);
+                fieldset.appendChild(legend);
 
                 if (q.options && q.options.length > 0) {{
                     const optionsList = document.createElement('ul');
-                    optionsList.classList.add('options-list');
+                    optionsList.className = 'options-list';
                     q.options.forEach(opt => {{
                         const listItem = document.createElement('li');
-                        const inputType = q.multi ? 'checkbox' : 'radio';
-                        const inputName = `question-${{q.id}}`;
-                        
-                        listItem.innerHTML = `
-                            <label>
-                                <input type="${{inputType}}" name="${{inputName}}" value="${{opt.id}}">
-                                ${{opt.text}}
-                            </label>
-                        `;
+                        const label = document.createElement('label');
+                        const input = document.createElement('input');
+                        input.type = q.multi ? 'checkbox' : 'radio';
+                        input.name = `question-${{q.id}}`;
+                        input.value = String(opt.id);
+                        label.append(input, document.createTextNode(` ${{opt.text}}`));
+                        listItem.appendChild(label);
                         optionsList.appendChild(listItem);
                     }});
-                questionBlock.appendChild(optionsList);
+                    fieldset.appendChild(optionsList);
                 }}
 
-                if (q.explanation) {{ // Only create explanation block if explanation exists
-                    const explanationBlock = document.createElement('div');
-                    explanationBlock.classList.add('explanation-block');
-                    explanationBlock.style.display = 'none'; // Initially hidden, will be shown on check
-                    explanationBlock.innerHTML = `<strong>Объяснение:</strong> ${{q.explanation}}`;
-                    questionBlock.appendChild(explanationBlock);
-                }}
-
+                questionBlock.appendChild(fieldset);
+                const explanationBlock = document.createElement('div');
+                explanationBlock.className = 'explanation-block';
+                explanationBlock.style.display = 'none';
+                const explanationTitle = document.createElement('strong');
+                explanationTitle.textContent = 'Пояснение: ';
+                explanationBlock.append(explanationTitle, document.createTextNode(q.explanation));
+                questionBlock.appendChild(explanationBlock);
                 quizForm.appendChild(questionBlock);
             }});
-            document.getElementById('totalQuestions').textContent = quizData.questions.length;
+            document.getElementById('totalQuestions').textContent = String(quizData.questions.length);
+        }}
+
+        function normalizeAnswer(value) {{
+            return value
+                .trim()
+                .toLowerCase()
+                .replace(/ё/g, 'е')
+                .replace(/[–—]/g, '-')
+                .replace(/\\s+/g, ' ')
+                .replace(/[.!?]+$/g, '');
         }}
 
         function checkAnswers() {{
@@ -411,17 +459,14 @@ def generate_html_test(test_data, output_path, prev_test_link, next_test_link, m
                 const questionBlock = document.querySelector(`[data-question-id="${{q.id}}"]`);
                 // Clear all previous styling on labels and inputs
                 questionBlock.querySelectorAll('label').forEach(label => {{
-                    label.classList.remove('correct-answer', 'incorrect-answer');
+                    label.classList.remove('correct-answer', 'incorrect-answer', 'missed-correct-answer');
                 }});
                 questionBlock.querySelectorAll('.fill-in-blank-input').forEach(input => {{
                     input.classList.remove('correct', 'incorrect');
                 }});
 
-                // Show explanation block after check, only if explanation exists
-                if (q.explanation) {{
-                    const explanationBlock = questionBlock.querySelector('.explanation-block');
-                    explanationBlock.style.display = 'block'; 
-                }}
+                const explanationBlock = questionBlock.querySelector('.explanation-block');
+                if (explanationBlock) explanationBlock.style.display = 'block';
 
                 let isQuestionCorrectOverall = true; // Tracks if the entire question is answered correctly
                 const statusIcon = questionBlock.querySelector('.question-status-icon');
@@ -431,8 +476,8 @@ def generate_html_test(test_data, output_path, prev_test_link, next_test_link, m
                     const inputs = questionBlock.querySelectorAll('.fill-in-blank-input');
                     let allBlanksCorrect = true;
                     inputs.forEach((input, index) => {{
-                        const userAnswer = input.value.trim().toLowerCase();
-                        const correctAnswersForBlank = q.fill_in_blanks[index].map(ans => ans.toLowerCase());
+                        const userAnswer = normalizeAnswer(input.value);
+                        const correctAnswersForBlank = q.fill_in_blanks[index].map(normalizeAnswer);
 
                         if (correctAnswersForBlank.includes(userAnswer)) {{
                             input.classList.add('correct');
@@ -448,6 +493,10 @@ def generate_html_test(test_data, output_path, prev_test_link, next_test_link, m
                 }} else if (q.options && q.options.length > 0) {{
                     const selectedInputs = Array.from(questionBlock.querySelectorAll(`input[name="question-${{q.id}}"]`));
                     const correctOptionIds = q.options.filter(opt => opt.correct).map(opt => String(opt.id));
+                    if (correctOptionIds.length === 0) {{
+                        isQuestionCorrectOverall = false;
+                        return;
+                    }}
                     
                     let userCorrectSelections = 0;
                     let userIncorrectSelections = 0;
@@ -484,11 +533,11 @@ def generate_html_test(test_data, output_path, prev_test_link, next_test_link, m
 
                 // Set question status icon
                 if (isQuestionCorrectOverall) {{
-                    statusIcon.innerHTML = '&#10004;'; // Green checkmark
+                    statusIcon.textContent = '✓';
                     statusIcon.classList.add('correct');
                     statusIcon.classList.remove('incorrect');
                 }} else {{
-                    statusIcon.innerHTML = '&#10006;'; // Red X
+                    statusIcon.textContent = '✖';
                     statusIcon.classList.add('incorrect');
                     statusIcon.classList.remove('correct');
                 }}
@@ -520,7 +569,7 @@ def generate_html_test(test_data, output_path, prev_test_link, next_test_link, m
                 const statusIcon = questionBlock.querySelector('.question-status-icon');
                 if (statusIcon) {{
                     statusIcon.style.display = 'none';
-                    statusIcon.innerHTML = '';
+                    statusIcon.textContent = '';
                     statusIcon.classList.remove('correct', 'incorrect');
                 }}
             }});
@@ -541,70 +590,76 @@ def process_all_source_files(source_dir, json_dir, tests_dir):
     if not os.path.exists(tests_dir):
         os.makedirs(tests_dir)
 
-    all_test_metadata = []
-
-    for filename in os.listdir(source_dir):
-        if filename.endswith(".md") or filename.endswith(".txt"):
-            file_path = os.path.join(source_dir, filename)
-            
-            # Parse the file
-            parsed_data = parse_md_file(file_path)
-
-            # Generate JSON output path
-            json_filename = transliterate(parsed_data["title"]) + ".json"
-            json_output_path = os.path.join(json_dir, json_filename)
-
-            with open(json_output_path, 'w', encoding='utf-8') as f:
-                json.dump(parsed_data, f, ensure_ascii=False, indent=2)
-            
-            # Define html_filename here before appending to metadata
-            html_filename = transliterate(parsed_data["title"]) + ".html"
-
-            all_test_metadata.append({
-                "title": parsed_data["title"],
-                "filename": html_filename,
-                "github_pages_link": f"https://nicotinko.github.io/pharmacologyTest/tests/{html_filename}"
-            })
-    
-    # Sort test_metadata alphabetically by title for consistent navigation
-    sorted_test_metadata = sorted(all_test_metadata, key=lambda x: x['title'])
-
-    # Regenerate HTML test files, now with navigation context
-    for i, test_meta in enumerate(sorted_test_metadata):
-        # We need to re-parse the original MD file to get the full test_data
-        # This is not ideal but necessary given the current function structure
-        original_md_filename = ""
-        for filename in os.listdir(source_dir):
-            if transliterate(os.path.splitext(os.path.basename(os.path.join(source_dir, filename)))[0]) + ".html" == test_meta["filename"]:
-                original_md_filename = filename
-                break
-        
-        if not original_md_filename:
-            print(f"Warning: Could not find original MD file for {test_meta['title']}")
+    records = []
+    slugs = {}
+    for filename in sorted(os.listdir(source_dir)):
+        if not filename.endswith((".md", ".txt")):
             continue
-
-        file_path = os.path.join(source_dir, original_md_filename)
+        file_path = os.path.join(source_dir, filename)
         parsed_data = parse_md_file(file_path)
+        slug = transliterate(parsed_data["title"])
+        if not slug:
+            raise SourceFormatError(f"{file_path}: title cannot produce an empty filename.")
+        if slug in slugs:
+            raise SourceFormatError(
+                f"{file_path}: title slug {slug!r} conflicts with {slugs[slug]!r}."
+            )
+        slugs[slug] = filename
+        records.append({"source": file_path, "data": parsed_data, "slug": slug})
 
-        # Determine previous and next test links
-        prev_test_link = None
-        if i > 0:
-            prev_test_link = sorted_test_metadata[i-1]['filename']
-        
-        next_test_link = None
-        if i < len(sorted_test_metadata) - 1:
-            next_test_link = sorted_test_metadata[i+1]['filename']
-        
-        main_page_link = "../index.html" # Assuming index.html is in the root, and tests are in 'tests/'
+    records.sort(key=lambda record: record["data"]["title"].casefold())
+    all_test_metadata = [
+        {
+            "title": record["data"]["title"],
+            "filename": f'{record["slug"]}.html',
+            "github_pages_link": f'tests/{record["slug"]}.html',
+        }
+        for record in records
+    ]
 
-        # Pass navigation links to generate_html_test
-        html_output_path = os.path.join(tests_dir, test_meta["filename"])
-        generate_html_test(parsed_data, html_output_path, prev_test_link, next_test_link, main_page_link)
+    json_filenames = {f'{record["slug"]}.json' for record in records}
+    html_filenames = {metadata["filename"] for metadata in all_test_metadata}
+    manifest_path = os.path.join(os.path.dirname(os.path.normpath(source_dir)) or '.', MANIFEST_FILE)
+    previous_manifest = {"json": [], "tests": []}
+    if os.path.exists(manifest_path):
+        with open(manifest_path, 'r', encoding='utf-8') as manifest_file:
+            previous_manifest.update(json.load(manifest_file))
 
-    return sorted_test_metadata # Return sorted metadata for catalog/index generation
+    for directory, category, current_files in (
+        (json_dir, "json", json_filenames),
+        (tests_dir, "tests", html_filenames),
+    ):
+        for stale_file in previous_manifest.get(category, []):
+            if stale_file in current_files:
+                continue
+            stale_path = os.path.join(directory, stale_file)
+            if os.path.isfile(stale_path):
+                os.remove(stale_path)
+
+    for record in records:
+        json_output_path = os.path.join(json_dir, f'{record["slug"]}.json')
+        with open(json_output_path, 'w', encoding='utf-8') as json_file:
+            json.dump(record["data"], json_file, ensure_ascii=False, indent=2)
+
+    for index, record in enumerate(records):
+        prev_test_link = all_test_metadata[index - 1]["filename"] if index else None
+        next_test_link = all_test_metadata[index + 1]["filename"] if index + 1 < len(records) else None
+        html_output_path = os.path.join(tests_dir, all_test_metadata[index]["filename"])
+        generate_html_test(record["data"], html_output_path, prev_test_link, next_test_link, "../index.html")
+
+    with open(manifest_path, 'w', encoding='utf-8') as manifest_file:
+        json.dump(
+            {"json": sorted(json_filenames), "tests": sorted(html_filenames)},
+            manifest_file,
+            ensure_ascii=False,
+            indent=2,
+        )
+
+    return all_test_metadata
 
 
 def generate_catalog_html(test_metadata, output_path):
+    safe_metadata = json.dumps(test_metadata, ensure_ascii=False, indent=2).replace('</', '<\\/')
     html_content = f"""
 <!DOCTYPE html>
 <html lang="ru">
@@ -676,7 +731,7 @@ def generate_catalog_html(test_metadata, output_path):
         </table>
     </div>
     <script>
-        const testMetadata = {json.dumps(test_metadata, ensure_ascii=False, indent=2)};
+        const testMetadata = {safe_metadata};
         const tbody = document.querySelector('table tbody');
 
         testMetadata.forEach(test => {{
@@ -702,7 +757,9 @@ def generate_index_html(test_metadata, output_path):
 
     list_items = ""
     for test in sorted_metadata:
-        list_items += f'<li><a href="tests/{test["filename"]}">{test["title"]}</a></li>\n'
+        filename = html.escape(test["filename"], quote=True)
+        title = html.escape(test["title"])
+        list_items += f'<li><a href="tests/{filename}">{title}</a></li>\n'
 
     html_content = f"""
 <!DOCTYPE html>

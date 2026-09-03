@@ -33,12 +33,20 @@
             border-radius: 5px;
             background-color: #f9f9f9;
         }
+        .question-fieldset {
+            min-width: 0;
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
         .question-text {
             font-weight: bold;
             margin-bottom: 10px;
             line-height: 1.5;
             position: relative; /* For positioning the icon */
             padding-right: 30px; /* Add space for the icon */
+            width: 100%;
+            box-sizing: border-box;
         }
         .question-status-icon {
             position: absolute;
@@ -71,6 +79,10 @@
         }
         .options-list label:hover {
             background-color: #e9e9e9;
+        }
+        .options-list label:focus-within {
+            outline: 2px solid #0056b3;
+            outline-offset: 2px;
         }
         input[type="radio"], input[type="checkbox"] {
             margin-right: 10px;
@@ -187,7 +199,7 @@
             <button type="button" class="check-button" onclick="checkAnswers()">Проверить</button>
             <button type="button" class="reset-button" onclick="resetQuiz()">Сбросить</button>
         </div>
-        <div id="results" class="results-block">
+        <div id="results" class="results-block" role="status" aria-live="polite" aria-atomic="true">
             Ваш результат: <span id="score">0</span> из <span id="totalQuestions">0</span> (<span id="percentage">0</span>%)
         </div>
 
@@ -1068,57 +1080,87 @@
             renderQuiz();
         });
 
+        function appendQuestionText(container, question) {
+            const parts = question.split(/({.*?})/g);
+            let blankIndex = 0;
+            parts.forEach(part => {
+                if (/^{.*}$/.test(part)) {
+                    const input = document.createElement('input');
+                    input.type = 'text';
+                    input.className = 'fill-in-blank-input';
+                    input.dataset.blankIndex = String(blankIndex++);
+                    input.setAttribute('aria-label', `Ответ на пропуск ${blankIndex}`);
+                    container.appendChild(input);
+                } else {
+                    container.appendChild(document.createTextNode(part));
+                }
+            });
+        }
+
         function renderQuiz() {
             const quizForm = document.getElementById('quizForm');
-            quizForm.innerHTML = ''; // Clear previous questions
+            quizForm.replaceChildren();
             quizData.questions.forEach(q => {
                 const questionBlock = document.createElement('div');
-                questionBlock.classList.add('question-block');
-                questionBlock.setAttribute('data-question-id', q.id);
+                questionBlock.className = 'question-block';
+                questionBlock.dataset.questionId = String(q.id);
 
-                const questionText = document.createElement('p');
-                questionText.classList.add('question-text');
-                
-                let qTextHtml = q.question;
-                if (q.fill_in_blanks && q.fill_in_blanks.length > 0) {
-                    let blankIndex = 0;
-                    qTextHtml = q.question.replace(/{.*?}/g, () => {
-                        return `<input type="text" class="fill-in-blank-input" data-blank-index="${blankIndex++}" />`;
-                    });
-                }
-                questionText.innerHTML = `<span>${q.id}. ${qTextHtml}</span> <br> <small>(${q.multi ? 'Несколько правильных ответов' : 'Один правильный ответ'})</small> <span class="question-status-icon"></span>`;
-                questionBlock.appendChild(questionText);
+                const fieldset = document.createElement('fieldset');
+                fieldset.className = 'question-fieldset';
+                const legend = document.createElement('legend');
+                legend.className = 'question-text';
+                const questionNumber = document.createElement('span');
+                questionNumber.textContent = `${q.id}. `;
+                legend.appendChild(questionNumber);
+                appendQuestionText(legend, q.question);
+                legend.appendChild(document.createElement('br'));
+                const hint = document.createElement('small');
+                hint.textContent = q.multi ? '(Несколько правильных ответов)' : '(Один правильный ответ)';
+                legend.appendChild(hint);
+                const statusIcon = document.createElement('span');
+                statusIcon.className = 'question-status-icon';
+                statusIcon.setAttribute('aria-hidden', 'true');
+                legend.appendChild(statusIcon);
+                fieldset.appendChild(legend);
 
                 if (q.options && q.options.length > 0) {
                     const optionsList = document.createElement('ul');
-                    optionsList.classList.add('options-list');
+                    optionsList.className = 'options-list';
                     q.options.forEach(opt => {
                         const listItem = document.createElement('li');
-                        const inputType = q.multi ? 'checkbox' : 'radio';
-                        const inputName = `question-${q.id}`;
-                        
-                        listItem.innerHTML = `
-                            <label>
-                                <input type="${inputType}" name="${inputName}" value="${opt.id}">
-                                ${opt.text}
-                            </label>
-                        `;
+                        const label = document.createElement('label');
+                        const input = document.createElement('input');
+                        input.type = q.multi ? 'checkbox' : 'radio';
+                        input.name = `question-${q.id}`;
+                        input.value = String(opt.id);
+                        label.append(input, document.createTextNode(` ${opt.text}`));
+                        listItem.appendChild(label);
                         optionsList.appendChild(listItem);
                     });
-                questionBlock.appendChild(optionsList);
+                    fieldset.appendChild(optionsList);
                 }
 
-                if (q.explanation) { // Only create explanation block if explanation exists
-                    const explanationBlock = document.createElement('div');
-                    explanationBlock.classList.add('explanation-block');
-                    explanationBlock.style.display = 'none'; // Initially hidden, will be shown on check
-                    explanationBlock.innerHTML = `<strong>Объяснение:</strong> ${q.explanation}`;
-                    questionBlock.appendChild(explanationBlock);
-                }
-
+                questionBlock.appendChild(fieldset);
+                const explanationBlock = document.createElement('div');
+                explanationBlock.className = 'explanation-block';
+                explanationBlock.style.display = 'none';
+                const explanationTitle = document.createElement('strong');
+                explanationTitle.textContent = 'Пояснение: ';
+                explanationBlock.append(explanationTitle, document.createTextNode(q.explanation));
+                questionBlock.appendChild(explanationBlock);
                 quizForm.appendChild(questionBlock);
             });
-            document.getElementById('totalQuestions').textContent = quizData.questions.length;
+            document.getElementById('totalQuestions').textContent = String(quizData.questions.length);
+        }
+
+        function normalizeAnswer(value) {
+            return value
+                .trim()
+                .toLowerCase()
+                .replace(/ё/g, 'е')
+                .replace(/[–—]/g, '-')
+                .replace(/\s+/g, ' ')
+                .replace(/[.!?]+$/g, '');
         }
 
         function checkAnswers() {
@@ -1129,17 +1171,14 @@
                 const questionBlock = document.querySelector(`[data-question-id="${q.id}"]`);
                 // Clear all previous styling on labels and inputs
                 questionBlock.querySelectorAll('label').forEach(label => {
-                    label.classList.remove('correct-answer', 'incorrect-answer');
+                    label.classList.remove('correct-answer', 'incorrect-answer', 'missed-correct-answer');
                 });
                 questionBlock.querySelectorAll('.fill-in-blank-input').forEach(input => {
                     input.classList.remove('correct', 'incorrect');
                 });
 
-                // Show explanation block after check, only if explanation exists
-                if (q.explanation) {
-                    const explanationBlock = questionBlock.querySelector('.explanation-block');
-                    explanationBlock.style.display = 'block'; 
-                }
+                const explanationBlock = questionBlock.querySelector('.explanation-block');
+                if (explanationBlock) explanationBlock.style.display = 'block';
 
                 let isQuestionCorrectOverall = true; // Tracks if the entire question is answered correctly
                 const statusIcon = questionBlock.querySelector('.question-status-icon');
@@ -1149,8 +1188,8 @@
                     const inputs = questionBlock.querySelectorAll('.fill-in-blank-input');
                     let allBlanksCorrect = true;
                     inputs.forEach((input, index) => {
-                        const userAnswer = input.value.trim().toLowerCase();
-                        const correctAnswersForBlank = q.fill_in_blanks[index].map(ans => ans.toLowerCase());
+                        const userAnswer = normalizeAnswer(input.value);
+                        const correctAnswersForBlank = q.fill_in_blanks[index].map(normalizeAnswer);
 
                         if (correctAnswersForBlank.includes(userAnswer)) {
                             input.classList.add('correct');
@@ -1166,6 +1205,10 @@
                 } else if (q.options && q.options.length > 0) {
                     const selectedInputs = Array.from(questionBlock.querySelectorAll(`input[name="question-${q.id}"]`));
                     const correctOptionIds = q.options.filter(opt => opt.correct).map(opt => String(opt.id));
+                    if (correctOptionIds.length === 0) {
+                        isQuestionCorrectOverall = false;
+                        return;
+                    }
                     
                     let userCorrectSelections = 0;
                     let userIncorrectSelections = 0;
@@ -1202,11 +1245,11 @@
 
                 // Set question status icon
                 if (isQuestionCorrectOverall) {
-                    statusIcon.innerHTML = '&#10004;'; // Green checkmark
+                    statusIcon.textContent = '✓';
                     statusIcon.classList.add('correct');
                     statusIcon.classList.remove('incorrect');
                 } else {
-                    statusIcon.innerHTML = '&#10006;'; // Red X
+                    statusIcon.textContent = '✖';
                     statusIcon.classList.add('incorrect');
                     statusIcon.classList.remove('correct');
                 }
@@ -1238,7 +1281,7 @@
                 const statusIcon = questionBlock.querySelector('.question-status-icon');
                 if (statusIcon) {
                     statusIcon.style.display = 'none';
-                    statusIcon.innerHTML = '';
+                    statusIcon.textContent = '';
                     statusIcon.classList.remove('correct', 'incorrect');
                 }
             });
