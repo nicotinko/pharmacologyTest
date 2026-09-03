@@ -27,9 +27,15 @@ def parse_md_file(file_path):
     with open(file_path, 'r', encoding='utf-8') as f:
         content = f.read()
 
-    # Extract title from filename (without extension) as a default
+    # Extract title from filename (without extension) as a default.
+    # A non-numbered level-two heading, when present, is the human-readable
+    # topic title. This allows an explicit title to take precedence over the
+    # source filename.
     base_name = os.path.splitext(os.path.basename(file_path))[0]
     title = base_name.strip()
+    topic_title_match = re.search(r'^##\s+(?!\d+\.\s)(.+?)\s*$', content, re.MULTILINE)
+    if topic_title_match:
+        title = topic_title_match.group(1).strip()
 
     questions_data = []
     current_question = None
